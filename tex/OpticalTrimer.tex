@@ -87,6 +87,91 @@ Usually, it is not straightforward to calculate this propagator,
 but underlying symmetries simplify this endeavor \cite{Lie1880p441,Neumaier2008}.
 While group theory is extensively used in mathematical optics \cite{Wolf2004,Lakshminarayanan2012}, it may be possible that the standard Lie algebra approach may look more complicated than it actually is for those outside that field, we hope that the following can provide a working example for those doing photonic design outside the mathematical optics community.
 
+\section{Envelope}
+
+We revisit the classical Hamiltonian for that governs the 
+equations of motion for the canonical pair of intentsity and 
+phase:
+
+\begin{equation} 
+H = \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
++ \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} \cos \left( \phi_{j} - \phi_{k} \right),\label{eq:clhamm}	
+\end{equation}
+
+It proves viabable to notice that for a given Energy and 
+given set of parameters there is an infinity number of trajectories.
+Here we will first be concerned with finding the outer boundary, or 
+envelope, of the union of all trajectories pertaining to Energy 
+E. 
+Equation (\cite{eq:clhamm}) reveals that for given intensities 
+$n_1,n_2$ and $n_3$ the energy is maximised when all three phases
+are zero. Consequently the envelope is defined by all pairs
+$n_1,n_2$ and $n_3$ which fulfil following condition
+
+
+\begin{equation}
+H_{Bndry}(n_1,n_2,n_3) := \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
++ \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} = E,	
+\end{equation}
+
+Due to energy conservation, the three intensities are not 
+independent and we can safely omit the third intensity in the 
+following discussion, ie. 
+$H_{Bndry}(n_1,n_2,n_3) \rightarrow H_{Bndry}(n_1,n_2)$.
+Numerically, once a given set of initial intensities and/or
+energy was chosen $H_{Bndry}(n_1,n_2) \rightarrow E$ the 
+trajectory of the envelope is characterised by the following differential equation:    
+\begin{eqnarray}
+\frac{\partial H_{Bndry}}{\partial n_1}\delta n_1 + 
+\frac{\partial H_{Bndry}}{\partial n_2}\delta n_2 = 0
+\end{eqnarray}
+
+Having obtained the envelope of the union of all trajectories we 
+can turn the case of single trajectories. We recall that we 
+focus our interest on parameters such that the corresponding 
+trajectories are incommensurate, ie. they fill all the area inside
+a closed loop. To find the envelope of a certain trajectory, that 
+is the aforementioned loop, we assume we
+already have obtained 
+the explicit solution for the trajectory.
+Our solution is most easily expressed as 
+solution to equation () which is given by:
+\begin{eqnarray}
+\mathcal{E} = a_1 e_1 e^{i \omega_1 t} + a_2 e_2 e^{i \omega_2 t} +a_3 e_3 e^{i \omega_3 t} 
+\end{eqnarray}
+where are $e_1,e_2,e_3$ are the eigenvectors, 
+$\omega_1, \omega_2,\omega_3$ are the 
+corresponding eigenfrequencies and $a1, a2, a3$ are parameters in accordance with the initial values $n_1$ and $n_2$. Note 
+that $n_j = \mathcal{E}\mathcal{E^*}$
+\textcolor{red}{The following is a bit handwaving, we probably need to explain it better}
+Incommensurate trajectories are 
+characterised by broken periodicity and 
+we can introduce a phase relevant parameter which controls the incommensurability: 
+\begin{eqnarray}
+\mathcal{E}(t, \phi) = a_1 e_1 e^{i \omega_1 t + \phi} + a_2 e_2 e^{i \omega_2 t} +a_3 e_3 e^{i \omega_3 t} 
+\end{eqnarray}
+The parameter $\phi$ acts such that 
+a given trajectory or more presily a section of the trajectory is offset in a
+direction pernedicular to the trajectory.
+This howerver can not hold true in at the 
+boundery or envelope and hence we establish
+following condition for the envelope:
+\begin{eqnarray}
+\frac{ (\frac{\partial n_1}{\partial t}) }{ (\frac{\partial n_2}{\partial t}) } = \frac{( \frac{\partial n_1}{\partial \phi})}{(\frac{\partial n_2}{\partial \phi}) } 	
+\end{eqnarray}
+which is equal to:
+\begin{eqnarray}
+D(t, \phi):=Det[\left(  \begin{array}{cc} 
+\frac{\partial n_1}{\partial t} & \frac{\partial n_2}{\partial t} \\
+\frac{\partial n_1}{\partial \phi} & \frac{\partial n_2}{\partial \phi} 
+\end{array} \right)] = 0
+\end{eqnarray}
+Accordingly, the envelope can numerically
+calculated from following differential equation:
+\begin{eqnarray}
+\frac{\partial D(t,\phi)}{\partial t} \delta t +
+\frac{\partial D(t,\phi)}{\partial \phi} \delta \phi = 0
+\end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % A short introduction to $SU(3)$ and the formal solution to the most general model
