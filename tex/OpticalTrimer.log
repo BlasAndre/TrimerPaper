@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.18)  8 FEB 2016 12:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.18)  8 FEB 2016 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1216,30 +1216,37 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 Package natbib Warning: Citation `eq:clhamm' on page 2 undefined on input line 
 106.
 
-[2] [3]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 437
+
+Underfull \vbox (badness 7291) has occurred while \output is active []
+
+ [2]
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 221
 .
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [4]
-<Fig3.pdf, id=191, 233.31165pt x 115.43124pt>
+)
+Underfull \vbox (badness 2189) has occurred while \output is active []
+
+ [3]
+[4] <Fig3.pdf, id=187, 233.31165pt x 115.43124pt>
 File: Fig3.pdf Graphic file (type pdf)
  <use Fig3.pdf>
-Package pdftex.def Info: Fig3.pdf used on input line 448.
+Package pdftex.def Info: Fig3.pdf used on input line 455.
 (pdftex.def)             Requested size: 250.14749pt x 123.76735pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 448--449
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 455--456
  [][] 
  []
 
 
-Underfull \hbox (badness 3158) in paragraph at lines 449--449
+Underfull \hbox (badness 3158) in paragraph at lines 456--456
 [][]\T1/phv/b/n/9 Fig. 1. |\T1/ppl/m/n/9 (+20) (Color on-line) Ab-so-lute am-pl
 i-tude tra-jec- 
  []
 
 
-Underfull \hbox (badness 3407) in paragraph at lines 449--449
+Underfull \hbox (badness 3407) in paragraph at lines 456--456
 \T1/ppl/m/n/9 (+20) to-ries, $\OT1/zplm/m/n/9 (\OMS/zplm/m/n/9 j\OML/zplm/m/it/
 9 E[]\OT1/zplm/m/n/9 (\OML/zplm/m/it/9 z\OT1/zplm/m/n/9 )\OMS/zplm/m/n/9 j\OT1/
 ppl/m/n/9 (+20) , \OMS/zplm/m/n/9 j\OML/zplm/m/it/9 E[]\OT1/zplm/m/n/9 (\OML/zp
@@ -1248,35 +1255,38 @@ lm/m/it/9 z\OT1/zplm/m/n/9 )\OMS/zplm/m/n/9 j\OT1/ppl/m/n/9 (+20) , \OMS/zplm/m
 OMS/zplm/m/n/9 j\OT1/zplm/m/n/9 )$\T1/ppl/m/n/9 (+20) , for ini-tial fields, 
  []
 
-LaTeX Font Info:    Try loading font information for U+bbm on input line 497.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 504.
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [5 <./Fig3.pdf>]
-Overfull \hbox (8.10814pt too wide) in alignment at lines 567--584
+Overfull \hbox (8.10814pt too wide) in alignment at lines 574--591
  [][][] []
  []
 
 
-Overfull \hbox (16.40303pt too wide) in alignment at lines 593--626
+Overfull \hbox (16.40303pt too wide) in alignment at lines 600--633
  [][][] []
  []
 
-<Fig2.pdf, id=262, 233.31165pt x 115.43124pt>
+<Fig2.pdf, id=257, 233.31165pt x 115.43124pt>
 File: Fig2.pdf Graphic file (type pdf)
  <use Fig2.pdf>
-Package pdftex.def Info: Fig2.pdf used on input line 659.
+Package pdftex.def Info: Fig2.pdf used on input line 666.
 (pdftex.def)             Requested size: 250.14749pt x 123.76735pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 659--660
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 666--667
  [][] 
  []
 
-[6 <./Fig2.pdf>] (./OpticalTrimer.bbl
+[6] (./OpticalTrimer.bbl
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 7.59998pt on input line 6.
-)
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <./Fig2.pdf>])
 
 Package caption Warning: Unused \captionsetup[table] on input line 111.
 See the caption package documentation for explanation.
@@ -1286,28 +1296,30 @@ Package natbib Warning: There were undefined citations.
 
 
 AED: lastpage setting LastPage
-[7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 705.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 705.
+[8
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 712.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 712.
  (./OpticalTrimer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 705.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 705.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 712.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 712.
 Package rerunfilecheck Info: File `OpticalTrimer.out' has not changed.
 (rerunfilecheck)             Checksum: E69CE514FACA07FE359ECD098C0DBD9A;646.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 705.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 712.
  ) 
 Here is how much of TeX's memory you used:
- 14001 strings out of 495000
- 207870 string characters out of 6181168
- 447655 words of memory out of 5000000
- 16515 multiletter control sequences out of 15000+600000
- 109121 words of font info for 342 fonts, out of 8000000 for 9000
+ 14007 strings out of 495000
+ 207977 string characters out of 6181168
+ 451655 words of memory out of 5000000
+ 16521 multiletter control sequences out of 15000+600000
+ 109564 words of font info for 345 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 43i,19n,45p,916b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,19n,45p,916b,689s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/andre/.texmf-var/fonts/pk/ljfour/public/bbm/bbm9.600pk>{/usr/share/te
 xlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
@@ -1323,10 +1335,10 @@ e1/urw/helvetic/uhvro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pala
 tino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on OpticalTrimer.pdf (7 pages, 911605 bytes).
+Output written on OpticalTrimer.pdf (8 pages, 912860 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
- 319 compressed objects within 4 object streams
- 110 named destinations out of 1000 (max. 500000)
+ 406 PDF objects out of 1000 (max. 8388607)
+ 322 compressed objects within 4 object streams
+ 111 named destinations out of 1000 (max. 500000)
  62043 words of extra memory for PDF output out of 74296 (max. 10000000)
 

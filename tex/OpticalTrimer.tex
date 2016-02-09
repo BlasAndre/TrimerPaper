@@ -181,7 +181,11 @@ calculated from following differential equation:
 Group theory, as an instrument to explore the underlying structure of mathematical models describing the physical world, brings a layer of abstraction into physics that allows deeper insight.
 For example, unitary matrices of rank three, just like our mode-coupling matrix $\hat{H}(z)$ in Eq.(\ref{eq:Eq1}), are commonly characterized by the special unitary group $SU(3)$,
 \begin{eqnarray}
-	\hat{H}(z) &=& \textrm{\textcolor{red}{diagonal elements are missing}} + \\
+	\hat{H}(z) &=& 
+	(\omega_1 - \omega_2) \hat{I}_{0}
+	+(\omega_1 + \omega_2) 
+	(\frac{\mathbf{1}}{3} + \frac{\hat{Y}_{0}}{2})
+	\nonumber \\
 	&&  g_{01}(z) \left( \hat{I}_{+} + \hat{I}_{-} \right) + g_{12}(z) \left( \hat{U}_{+} + \hat{U}_{-} \right)\nonumber \\
 	 & & +  g_{02}(z) \left( \hat{V}_{+} + \hat{V}_{-} \right).
 \end{eqnarray}
@@ -214,7 +218,7 @@ Note, there is no apriori ordering of $su(3)$ elements to write the propagator.
 However, the values of the prefixed $\theta_{j}(z)$ functions do depend on the chosen order.
 We will choose a particular ordering,
 \begin{eqnarray}
-\hat{U}(z) &=& e^{i \iota_{+}(z) \hat{I}_{+}} e^{i \mu_{+}(z) \hat{U}_{+}}  
+\hat{U}(z) &=& e^{i \phi(z)\mathbb{1} }e^{i \iota_{+}(z) \hat{I}_{+}} e^{i \mu_{+}(z) \hat{U}_{+}}  
 e^{i \nu_{+}(z) \hat{V}_{+}} e^{ \iota_{0}(z) \hat{I}_{0}} \nonumber \\ 
 && \times e^{i y_{0}(z) \hat{Y}}  e^{i \nu_{-}(z) \hat{V}_{-}} e^{i \mu_{-}(z) \hat{U}_{-}} e^{i \iota_{-}(z) \hat{I}_{-}}, \label{eq:prop}
 \end{eqnarray}
@@ -222,22 +226,25 @@ that keeps us in line with the idea of understanding propagation through wavegui
 
 Substituting the propagated field vector, Eq.(\ref{eq:Eq3}) considering as propagator Eq.(\ref{eq:prop}), into the mode coupling equation, Eq.(\ref{eq:diff}), is a cumbersome but straightforward operation that yields a set of eight coupled differential equations,
 \begin{eqnarray}
-	\iota_{+}^{\prime} &=& g_{01} \left( \iota_{+}^2 + 1 \right) + g_{12}  \iota_{+}  \nu_{+} - i  g_{03}   \nu_{+},    \label{eq:iota} \\
-	\iota_{0}^{\prime} &=& i \left[ \left(- 2 g_{01} + i g_{02} \mu_{+}  \right) \iota_{+}  - g_{02} \nu_{+} + g_{12} \mu_{+} \right], \\
-	\iota_{-}^{\prime} &=& e^{i \iota_0} \left( g_{1} - i g_{02}\mu_{+} \right), \\
-	\mu_{+}^{\prime} &=& \left( - g_{01} + i  g_{02} \mu_{+} \right) \iota_{+} \mu_{+}    +  g_{12} \left( \mu_{+}^2 +  1 \right)\nonumber \\
-	&&  +  \left( i  g_{01} + g_{02} \mu_{+} \right) \nu_{+},   \\
-	\nu_{+}^{\prime} &=& g_{01} \iota_{+} 
-	\nu_{+} + g_{02} (  \nu_{+} ^2
-	+ 1)-i  g_{12} \iota_{+}, \label{eq:mu} \\
-	y_{0}^{\prime} &=& -i\frac{3}{2}  
-	[ g_{02}   \nu_{+}+  \mu_{+}  
-	( g_{12}+i  g_{02} \iota_{+})],  \\
-	\nu_{-}^{\prime} &=& e^{\frac{1}{2}i(2y_0+\iota_0)}
-	g_{02} +i e^{i\iota_{0}}  \mu_{-}  (i g_{02} 
-	 \mu_{+}-  g_{01}),  \\
-	\mu_{-}^{\prime} &=&  e^{i y_0-\frac{1}{2}i \iota_0}
-	( g_{12}+i  g_{02} \iota_{+}), 
+\iota_{+}^{\prime} &=& g_{01} \left( \iota_{+}^2 + 1 \right) + g_{02}  \iota_{+}  (\nu_{+}-\omega_1+\omega_2)\nonumber\\ &&- i  g_{12}   \nu_{+},    \label{eq:iota} \\
+\iota_{0}^{\prime} &=& i \left[ \left(- 2 g_{01} + i g_{02} \mu_{+}  \right) \iota_{+}  - g_{02} \nu_{+} + g_{12} \mu_{+} \right]\nonumber \\
+&&+ \omega_1 - \omega_2, \\
+\iota_{-}^{\prime} &=& e^{i \iota_0} \left( g_{1} - i g_{02}\mu_{+} \right), \\
+\mu_{+}^{\prime} &=& \left( - g_{01} + i  g_{02} \mu_{+} \right) \iota_{+} \mu_{+}    +  g_{12} \left( \mu_{+}^2 +  1 \right)\nonumber \\
+&&  +  \left( i  g_{01} + g_{02} \mu_{+} \right) \nu_{+}+i \mu_{+}\omega_2,   \\
+\nu_{+}^{\prime} &=& \nu_{+}(g_{01} \iota_{+}
++i\omega_1) 
++ g_{02} (  \nu_{+} ^2
++ 1)-i  g_{12} \iota_{+}, \label{eq:mu} \\
+y_{0}^{\prime} &=& -i\frac{3}{2}  
+[ g_{02}   \nu_{+}+  \mu_{+}  
+( g_{12}+i  g_{02} \iota_{+})]\nonumber \\&&+\frac{1}{2}(\omega_1+\omega_2),  \\
+\nu_{-}^{\prime} &=& e^{\frac{1}{2}i(2y_0+\iota_0)}
+g_{02} +i e^{i\iota_{0}}  \mu_{-}  (i g_{02} 
+\mu_{+}-  g_{01}),  \\
+\mu_{-}^{\prime} &=&  e^{i y_0-\frac{1}{2}i \iota_0}
+( g_{12}+i  g_{02} \iota_{+}),\\
+\phi ^{\prime} &=& \frac{1}{3}(\omega_1+\omega_2)
 \end{eqnarray}
 where, for the sake of space, we have used $f \equiv f(z)$ and $f' \equiv \partial_{z} f(z)$ for all propagation dependent auxiliary functions and couplings.
 
