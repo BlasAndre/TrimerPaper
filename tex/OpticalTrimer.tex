@@ -62,7 +62,7 @@ Finally, we will present a summary with possible extensions allowed by linear an
 \section{Three-waveguide coupler}
 
 Light propagating through an ideal, general three-waveguide coupler can be described by coupled mode theory, c.f. \cite{RodriguezLara2015p068014} and references therein,
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:principal}
 -i \partial_{z} \left( \begin{array}{c} \mathcal{E}_{0}(z) \\ \mathcal{E}_{1}(z) \\  \mathcal{E}_{2}(z) \end{array} \right) =  \left( \begin{array}{ccc} 
 \omega_{0}(z)  & g_{01}(z) & g_{02}(z) \\
 g_{01}(z) & \omega_{1}(z) & g_{12}(z) \\
@@ -88,7 +88,7 @@ to this ordinary linear differential equation is provided by an ordered exponent
 \end{eqnarray}
 Usually, it is not straightforward to calculate the propagator,
 but underlying symmetries simplify this endeavor \cite{Lie1880p441,Neumaier2008}.
-While group theory is extensively used in mathematical optics \cite{Wolf2004,Lakshminarayanan2012}, it may be possible that the standard Lie algebra approach may look more complicated than it actually is for those outside that field, we hope that the following can help vanishing that feeling.
+While group theory is extensively used in mathematical optics \cite{Wolf2004,Lakshminarayanan2012}, it may be possible that the standard Lie algebra approach may look more complicated than it actually is for those outside that field, we hope that the following can help vanishing(\textcolor{red}{did you mean vanquish?}) that feeling.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -389,14 +389,15 @@ H=\left( \begin{array}{ccc}
 1 & 0 & \alpha \\
 \alpha & \alpha & 0 \end{array} \right)	 
 \end{equation}
-Note that the Hamiltonian is  $\hat{Z}_2$-invariante, i.e. it is invariant under xchanging the first and the second waveguide.
+Note that the Hamiltonian is  $\hat{Z}_2$-invariante, i.e. it is invariant under exchanging the first and the second waveguide.
 This symmetry also is reflected by the eigenvalues which are  $\left\{-1, \bar{\varphi}, \varphi  \right\}$ with
 \begin{eqnarray}
 \bar{\varphi} &=& \frac{1}{2} \left(1-\sqrt{8 \alpha ^2+1}\right),\\
 \varphi &=& \frac{1}{2} \left( 1 + \sqrt{8 \alpha ^2+1} \right).
 \end{eqnarray}
 It is simple to see that $\bar{\varphi} + \varphi = 1$ and the second and third eigenvalue do transform into 
-each other upon applying the complex conjugate. Note that the latter eigenvalue 
+each other upon applying the complex conjugate(\textcolor{red}{Doesnt make sense to me now, why did I write that? How about, the second
+	and thiird eigenvalues are the roots of $x^2-x-2\alpha^2=0$}). Note that the latter eigenvalue 
 assumes the golden ratio for $\alpha = \sqrt{1/2}$.
 Due to the $\hat{Z}_2$-symmetry the propagator can be calculated directly from the Hamiltonian and can be written as:
 \begin{eqnarray}
@@ -433,8 +434,8 @@ two of the equations, namely $h(\zeta)$ and $i(\zeta)$ depend on only two of the
 eigenfrequencies, $\varphi$ and $\bar{\varphi}$. Equation (\ref{eq:prop2}) further reveals that the 
 evolution of the third component only depends on those two equations $h(\zeta)$ and $i(\zeta)$.
 Now one can hope that if we chose the initial eigenstate accordingly one of the two 
-eigenfrequencies in the evolution of the third component will cancel out. That is, if
-the evolution only depends on one frequency, it will only change in phase and the 
+eigenfrequencies that appear in the evolution of the third component will cancel out. That is, if
+the evolution only depends on a single frequency, it will only change in phase and the 
 amplitude will remain immutable. \newline
 Hence, lets look for such a state where no energy transfer into or out of the third component occurs. Without loss of 
 generality we can assume that the state-vector at a given time bears following form:
@@ -460,7 +461,7 @@ is met:
 Consequently we obtain two solutions for a state with stationary amplitude in the third waveguide.
  Without loss of generality we can normalise the initial state such that the amplitude of the third component is one, ie $\mathcal{E}_3(0)=1$.
  Then the time evolution of the system is given by:
-\begin{equation}
+\begin{equation} \label{eq:statAmp1}
 \mathcal{E}_{\varphi}(\zeta)=\left( \begin{array}{c}
 \frac{g(\zeta)}{\varphi -\bar{\varphi}}\frac{\varphi}{\alpha}+\frac{h(\zeta)}{\varphi -\bar{\varphi}} \\
 \frac{f(\zeta)}{\varphi -\bar{\varphi}}\frac{\varphi}{\alpha}+\frac{h(\zeta)}{\varphi -\bar{\varphi}} \\
@@ -468,7 +469,7 @@ e^{i\zeta\varphi}
 \end{array} \right)	
 \end{equation}
 and
-\begin{equation}
+\begin{equation} \label{eq:statAmp2}
 \mathcal{E}_{\bar{\varphi}}(\zeta)=\left( \begin{array}{c}
 \frac{g(\zeta)}{\varphi -\bar{\varphi}}\frac{\bar{\varphi}}{\alpha}+\frac{h(\zeta)}{\varphi -\bar{\varphi}} \\
 \frac{f(\zeta)}{\varphi -\bar{\varphi}}\frac{\bar{\varphi}}{\alpha}+\frac{h(\zeta)}{\varphi -\bar{\varphi}} \\
@@ -476,7 +477,14 @@ e^{i\zeta\bar{\varphi}}
 \end{array} \right)	
 \end{equation}
 
-
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[height=4cm]{Fig5.pdf}}
+	\caption{(Color online) Absolute amplitude trajectories, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$,  for the states with stationary 
+		Amplitude in the third component 
+		as obtained in equations (\ref{eq:statAmp1}) and (\ref{eq:statAmp2})}
+	\label{fig: Fig5}
+\end{figure}
 
 
 
@@ -497,7 +505,7 @@ in the single photon limit,
 	\mathcal{E}_{1}(t) \left\vert 0,1,0 \right\rangle + \mathcal{E}_{2}(t) \left\vert 0,0,1 \right\rangle,
 \end{eqnarray}
 with $ \sum_{j} \vert \mathcal{E}_{j}(z) \vert^2 = 1$, yields a differential equation set equivalent to the mode coupling theory result, Eq.(\ref{eq:ddiff}) up to substitution of backwards time by propagation distance, or, better, 
-\begin{eqnarray}
+\begin{eqnarray} \label{eq:}
 	i \partial_t	
 	\left( \begin{array}{c} 
 		\mathcal{E}_{0}(t) \\
@@ -604,22 +612,20 @@ We revisit the classical Hamiltonian for that governs the
 equations of motion for the canonical pair of intentsity and 
 phase:
 
-\begin{equation} 
+\begin{equation} \label{eq:clhamm}
 H = \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
-+ \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} \cos \left( \phi_{j} - \phi_{k} \right),\label{eq:clhamm}	
++ \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} \cos \left( \phi_{j} - \phi_{k} \right),	
 \end{equation}
 
-It proves viabable to notice that for a given Energy and 
-given set of parameters there is an infinity number of trajectories.
-Here we will first be concerned with finding the outer boundary, or 
-envelope, of the union of all trajectories pertaining to Energy 
-E. 
-Equation (\cite{eq:clhamm}) reveals that for given intensities 
+It proves viable to notice that for a given energy and a given set of parameters generally an infinity number of trajectories exist.
+The conjunction of all these trajectories pertaining to a certain energy
+span a path-connected surface.
+Firstly we will be concerned with finding the outer boundary, or envelope, of the union of all trajectories pertaining to Energy 
+E.
+Equation (\ref{eq:clhamm}) readily reveals that for given intensities 
 $n_1,n_2$ and $n_3$ the energy is maximised when all three phases
 are zero. Consequently the envelope is defined by all pairs
 $n_1,n_2$ and $n_3$ which fulfil following condition
-
-
 \begin{equation}
 H_{Bndry}(n_1,n_2,n_3) := \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
 + \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} = E,	
@@ -638,26 +644,24 @@ trajectory of the envelope is characterised by the following differential equati
 \end{eqnarray}
 
 Having obtained the envelope of the union of all trajectories we 
-can turn the case of single trajectories. We recall that we 
+can turn to the area of a single trajectory. We recall that we 
 focus our interest on parameters such that the corresponding 
-trajectories are incommensurate, ie. they fill all the area inside
+trajectories are incommensurate, i.e. they fill all the area inside
 a closed loop. To find the envelope of a certain trajectory, that 
 is the aforementioned loop, we assume we
 already have obtained 
 the explicit solution for the trajectory.
 Our solution is most easily expressed as 
-solution to equation () which is given by:
+solution to equation (\ref{eq:principal}) which is given by:
 \begin{eqnarray}
-\mathcal{E} = a_1 e_1 e^{i \omega_1 t} + a_2 e_2 e^{i \omega_2 t} +a_3 e_3 e^{i \omega_3 t} 
+\mathcal{E}(t) = a_1 e_1 e^{i \omega_1 t} + a_2 e_2 e^{i \omega_2 t} +a_3 e_3 e^{i \omega_3 t} 
 \end{eqnarray}
-where are $e_1,e_2,e_3$ are the eigenvectors, 
-$\omega_1, \omega_2,\omega_3$ are the 
-corresponding eigenfrequencies and $a1, a2, a3$ are parameters in accordance with the initial values $n_1$ and $n_2$. Note 
-that $n_j = \mathcal{E}\mathcal{E^*}$
+where $e_1,e_2$ and $e_3$ are the eigenvectors with corresponding eigenfrequencies $\omega_1, \omega_2$ and $\omega_3$. Parameters $a1, a2$ and $ a3$ are chosen in accordance with the initial values $n_1$ and $n_2$. Note 
+that $n_j = \mathcal{E}_j\mathcal{E^*}_j$
 \textcolor{red}{The following is a bit handwaving, we probably need to explain it better}
 Incommensurate trajectories are 
 characterised by broken periodicity and 
-we can introduce a phase relevant parameter which controls the incommensurability: 
+we can introduce a phase relevant parameter which controls/mimics the incommensurability: 
 \begin{eqnarray}
 \mathcal{E}(t, \phi) = a_1 e_1 e^{i \omega_1 t + \phi} + a_2 e_2 e^{i \omega_2 t} +a_3 e_3 e^{i \omega_3 t} 
 \end{eqnarray}
@@ -684,7 +688,16 @@ calculated from following differential equation:
 \frac{\partial D(t,\phi)}{\partial \phi} \delta \phi = 0
 \end{eqnarray}
 
-
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[height=4cm]{Fig4.pdf}}
+	\caption{(Color online) Absolute amplitude trajectories, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$,  for two 
+	distinct trajectories pertaining to 
+	the energy E. The boundary 
+	of all possible trajectories corresponding to energy E. The envelopes of the indivudual trajectories are are calculated according to equation ().} 
+	 
+	\label{fig: Fig4}
+\end{figure}
 
 
 \section{Conclusion}
