@@ -459,7 +459,7 @@ is met:
 \mathcal{E}_2(0)=\mathcal{E}_3(0)\frac{\bar{\varphi}}{\alpha}
 \end{eqnarray}
 Consequently we obtain two solutions for a state with stationary amplitude in the third waveguide.
- Without loss of generality we can normalise the initial state such that the amplitude of the third component is one, ie $\mathcal{E}_3(0)=1$.
+ Without infringing general validity we can normalise the initial state such that the amplitude of the third component is one, ie $\mathcal{E}_3(0)=1$.
  Then the time evolution of the system is given by:
 \begin{equation} \label{eq:statAmp1}
 \mathcal{E}_{\varphi}(\zeta)=\left( \begin{array}{c}
@@ -494,17 +494,27 @@ e^{i\zeta\bar{\varphi}}
 %//////////////////////////////////////////////%//////
 
 \section{Classical mechanics and envelopes}
-An lossless waveguide is an optical cavity, where  
-In quantum mechanics, the Hamiltonian for three coupled harmonic oscillators, 
-\begin{eqnarray}
+An lossless waveguide is an optical cavity, where
+\textcolor{red}{something missing here ?!}\newline  
+In quantum mechanics, the Hamiltonian for three coupled harmonic oscillators is given by:
+\begin{eqnarray}\label{eq:qmHamiltonian}
 	\hat{H}(t) = \sum_{j=0}^{2} \omega_j(t) \hat{a}^{\dagger}_j \hat{a}_{j} + \sum_{j\neq k=0}^{2} g_{jk}(t) \hat{a}^{\dagger}_j \hat{a}_k,
 \end{eqnarray}
-in the single photon limit,
-\begin{eqnarray}
+where, by analogy with equation (\ref{eq:principal}),  $\omega_j(t)$ are the time dependent free oscillator
+frequencies and $g_{ij}(t)$ refer to the time dependent coupling constants. The Hamiltonian above has been studied 
+elsewhere and here we will only consider two limiting cases.
+The classical limit is usually associated with the coherent state solution and involves an infinite number of photons. 
+The opposite end of the spectrum is marked by the single photon 
+limit. At any given time only a single photon occupies the system 
+and consequently the ansatz is as follows,
+\begin{eqnarray}\label{eq:sglPhoton}
 	\left\vert \psi(t) \right\rangle = \mathcal{E}_{0}(t) \left\vert 1, 0, 0 \right\rangle  +
 	\mathcal{E}_{1}(t) \left\vert 0,1,0 \right\rangle + \mathcal{E}_{2}(t) \left\vert 0,0,1 \right\rangle,
 \end{eqnarray}
-with $ \sum_{j} \vert \mathcal{E}_{j}(z) \vert^2 = 1$, yields a differential equation set equivalent to the mode coupling theory result, Eq.(\ref{eq:ddiff}) up to substitution of backwards time by propagation distance, or, better, 
+with $ \sum_{j} \vert \mathcal{E}_{j}(z) \vert^2 = 1$. 
+Applying the single photon state, equation (\ref{eq:sglPhoton}), to the 
+quantum Hamiltonian, equation (\ref{eq:qmHamiltonian}), 
+yields a differential equation set equivalent to the mode coupling theory result, Eq.(\ref{eq:ddiff}) up to substitution of backwards time by propagation distance, or, better, 
 \begin{eqnarray} \label{eq:}
 	i \partial_t	
 	\left( \begin{array}{c} 
@@ -523,7 +533,14 @@ with $ \sum_{j} \vert \mathcal{E}_{j}(z) \vert^2 = 1$, yields a differential equ
 		\mathcal{E}_{2}(t)
 	\end{array} \right) .
 \end{eqnarray}
-This is just off-topic, we really will focus on this in the next section, right now we want to focus on something else.
+
+The result above is a differential equation 
+for the solution of the three coupled wave guides
+with respect to the complex amplitudes of each 
+wave-guide. In certain circumstances and and for 
+reason that will become apparent shortly it is 
+feasible to derive equations of motions 
+for other sets of variables. 
 
 We can use quadratures,
 \begin{eqnarray}
@@ -572,7 +589,7 @@ i \partial_t
 
 In the classical limit, the canonical pair provided by the creation and annihilation operators can be replaced by the classical canonical pair of intensity and phase, $\left\{ n_{j}, \phi_{j} \right\}$, $ \hat{a}_{j} \rightarrow \sqrt{n_{j}}e^{i \phi_{j}}$. 
 This delivers a classical Hamiltonian, 
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:clHamiltonian}
 H(t) = \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
 	+ \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} \cos \left( \phi_{j} - \phi_{k} \right),
 \end{eqnarray}
@@ -586,14 +603,20 @@ and these are the coupled mode equations describing the evolution of intensity a
 Classicam mechanics: if the three normal modes frequencies, e.g. eigenvalues of the mode-coupling matrix in Eq.(9), are commesurate then the propagated complex fields will be periodic \cite{Goldstein1980}. 
 
 In order to visualize the dynamics of the system we will choose a (pseudo?) Poincar\'e phase-space given by the square roots of the three waveguide intensities $(\vert \mathcal{E}_{0} \vert,\vert \mathcal{E}_{1} \vert,\vert \mathcal{E}_{2} \vert )$.
-Here  normal mode frequencies that are rational multiples of each other, commesurate, will translate into well-defined closed trajectories. For incommesurate normal frequencies the trajectories will be ergodic and fill a region of phase space defined by the energy of the motion \cite{Goldstein1980}.
+Here  normal mode frequencies that are rational multiples of each other, commensurate, will translate into well-defined closed trajectories. For incommensurate normal frequencies the trajectories will be ergodic and fill a region of phase space defined by the energy of the motion \cite{Goldstein1980}.
 
+Let us turn to the vast class of incommensurate trajectories. In many situations the exact route 
+of the trajectory is not of primary importance and 
+it will suffice to have gained some information on the region that will be traversed. The region 
+of a given trajectory is characterised by the 
+boundary which encompasses the very region. Therefore in the remainder of this section we will 
+attend to finding the corresponding boundary which we also refer to as the envelope of the trajectory.   
 
-Note that requiring a normalized intensity in the optical system translates into $\sum_{j} n_{j} = 1$, this obviates the use of $\partial_{t} n_{2}$ and suggest taking the phase at the $j=2$ as reference as $\partial_{t} \phi_{2} = 0$. This reduces the problem by one degree of freedom to two degrees of freedom.
-
-Numerically, it makes no difference to solve Eq.(9) or use Eq.(11)-Eq.(12).
-Figure \ref{fig: Fig2} shows the squared root intensities plot for the numerical propagation of random parameter sets and initial conditions. The absolute value of the difference between the numerical propagation from the complex field or the intensity-phase picture was always below $10^{-5}$.
-We are ploting the absolute amplitudes $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$, thus the trajectories will are on an octant of the unit sphere.
+%Note that requiring a normalized intensity in the optical system translates into $\sum_{j} n_{j} = 1$, this obviates the use of $\partial_{t} n_{2}$ and suggest taking the phase at the $j=2$ as reference as $\partial_{t} \phi_{2} = 0$. This reduces the problem by one degree of freedom to two degrees of freedom.
+%
+%Numerically, it makes no difference to solve Eq.(9) or use Eq.(11)-Eq.(12).
+%Figure \ref{fig: Fig2} shows the squared root intensities plot for the numerical propagation of random parameter sets and initial conditions. The absolute value of the difference between the numerical propagation from the complex field or the intensity-phase picture was always below $10^{-5}$.
+%We are plotting the absolute amplitudes $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$, thus the trajectories will are on an octant of the unit sphere.
 
 \begin{figure}[htbp]
 \centering
@@ -602,29 +625,18 @@ We are ploting the absolute amplitudes $(\vert E_{0}(z) \vert, \vert E_{1}(z) \v
 \label{fig: Fig2}
 \end{figure}
 
-Dealing with the problem in the intensity-phase picture does not make it easier to solve but it provides insight.
-Given a trimmer parameter set, $S(z) = \left\{ \omega_{j}(z), g_{jk}(z) \right\}$, and an initial field configuration, $\mathcal{E}(0) = \left\{ \mathcal{E}_{j}(0) \right\}$, it is possible to calculate the energy of the orbit, $H(0) = \epsilon\left(S(0), \mathcal{E(0)}\right)$. Then, it is possible to find the conditions that define the envelope of such orbit in the absolute value of the field amplitude plots via simultaneous elimination of the phase variables with $H(z) - \epsilon = 0 $ and $\partial_t \phi_j = 0$ for $j= 0,1$.
+%Dealing with the problem in the intensity-phase picture does not make it easier to solve but it provides insight.
+%Given a trimmer parameter set, $S(z) = \left\{ \omega_{j}(z), g_{jk}(z) \right\}$, and an initial field configuration, $\mathcal{E}(0) = \left\{ \mathcal{E}_{j}(0) \right\}$, it is possible to calculate the energy of the orbit, $H(0) = \epsilon\left(S(0), \mathcal{E(0)}\right)$. Then, it is possible to find the conditions that define the envelope of such orbit in the absolute value of the field amplitude plots via simultaneous elimination of the phase variables with $H(z) - \epsilon = 0 $ and $\partial_t \phi_j = 0$ for $j= 0,1$.
 
 
-\section{Envelope}
-
-We revisit the classical Hamiltonian for that governs the 
-equations of motion for the canonical pair of intentsity and 
-phase:
-
-\begin{equation} \label{eq:clhamm}
-H = \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
-+ \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} \cos \left( \phi_{j} - \phi_{k} \right),	
-\end{equation}
-
-It proves viable to notice that for a given energy and a given set of parameters generally an infinity number of trajectories exist.
+It proves viable to notice that for a given energy and a given set of parameters in most cases an infinity number of distinct trajectories prevails.
 The conjunction of all these trajectories pertaining to a certain energy
 span a path-connected surface.
 Firstly we will be concerned with finding the outer boundary, or envelope, of the union of all trajectories pertaining to Energy 
 E.
-Equation (\ref{eq:clhamm}) readily reveals that for given intensities 
+Equation (\ref{eq:clHamiltonian}) readily reveals that for given intensities 
 $n_1,n_2$ and $n_3$ the energy is maximised when all three phases
-are zero. Consequently the envelope is defined by all pairs
+are zero. Consequently the envelope is defined by all triplets
 $n_1,n_2$ and $n_3$ which fulfil following condition
 \begin{equation}
 H_{Bndry}(n_1,n_2,n_3) := \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
