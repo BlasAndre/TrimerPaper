@@ -76,19 +76,20 @@ These complex field equations can be cast in a Schr\"odinger-like form \cite{Rod
 \end{eqnarray}
 where kets and operators in Dirac notation represent column vectors and square matrices, in that order.
 We can normalize the intensity, $\sum_{j} \vert \mathcal{E}_{j}(z) \vert^2 =1$, as we are dealing with an ideal lossless device.
-Experimental realization of this model include, but are not limited, to laser inscribed photonic waveguides \cite{Szameit2010p163001} and  multicore optical fibers \cite{}, Fig. \ref{fig:Fig1}(a), whispering-mode cavities \cite{}, Fig. \ref{fig:Fig1}(b), or microwave resonators \cite{FrancoVillafane2013p170405} and standard RLC-circuits \cite{} for electromagnetic radiation outside the visible spectrum.
+Experimental realization of this model include, but are not limited, to laser inscribed photonic waveguides \cite{Szameit2010p163001} and  multicore optical fibers \cite{}, Fig. \ref{fig:Fig1}(a), whispering-mode cavities \cite{}, Fig. \ref{fig:Fig1}(b), or microwave resonators \cite{FrancoVillafane2013p170405} and, outside the field of optics,  standard RLC-circuits \cite{}.
 
 The formal solution,
 \begin{eqnarray}
 \vert \mathcal{E}(z) \rangle = \hat{U}(z) \vert \mathcal{E}(0) \rangle,
 \end{eqnarray}
-to this ordinary linear differential equation is provided by an ordered exponential \cite{Magnus1954p649,Blanes2009p151}, 
+to this ordinary matrix linear differential equation is provided by an ordered exponential \cite{Magnus1954p649,Blanes2009p151}, 
 \begin{eqnarray} 
 \hat{U}(z) = \mathrm{Texp} \left[ \int_{0}^{z} \hat{H}(x) dx \right].
 \end{eqnarray}
-Usually, it is not straightforward to calculate the propagator,
-but underlying symmetries simplify this endeavor \cite{Lie1880p441,Neumaier2008}.
-While group theory is extensively used in mathematical optics \cite{Wolf2004,Lakshminarayanan2012}, it may be possible that the standard Lie algebra approach may look more complicated than it actually is for those outside that field, we hope that the following can help vanishing(\textcolor{red}{did you mean vanquish?}) that feeling.
+Usually, it is not straightforward to calculate this propagator,
+but underlying symmetries simplify this endeavor \cite{Lie1880p441,Wei1963p575,Neumaier2008}.
+While group theory is extensively used in mathematical optics \cite{Wolf2004,Lakshminarayanan2012}, it may be possible that the standard Lie algebra approach may look more complicated than it actually is for those outside that field. 
+We hope that the following can help vanquish that feeling.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -103,14 +104,14 @@ Coupled mode theory delivers a Schr\"odinger-like form describing light propagat
 The mode-coupling matrix $\hat{H}$ for our triangular three-waveguide coupler is a unitary matrix of rank three with trace equal to $\sum_{j=0}^{3} \omega_{j}(z)$. 
 It is useful to decomposed it into a unit matrix part and a traceless part, 
 \begin{eqnarray}
-	\hat{H}(z) &=& \frac{1}{3} \sum_{j=0}^{3} \omega_{j}(z) \hat{\mathbb{1}} + \hat{\mathcal{H}}(z). \\
+	\hat{H}(z) &=& \frac{1}{3} \sum_{j=0}^{3} \omega_{j}(z) \hat{\mathbb{1}} + \hat{\mathcal{H}}(z).
 \end{eqnarray}
 The traceless part can be written in terms of the special unitary group $SU(3)$ which is  a household name in physics often related to the work of Gell-Mann \cite{GellMann1961} and Ne'eman \cite{Neeman1961p222},
 \begin{eqnarray}
 	\hat{\mathcal{H}}(z)&=& \frac{1}{2} \omega_{y}(z) \hat{Y}  + \omega_{i}(z) \hat{I}_{0}+ g_{01}(z) \left( \hat{I}_{+} + \hat{I}_{-} \right) \nonumber \\
 			&&  + g_{12}(z) \left( \hat{U}_{+} + \hat{U}_{-} \right)  +   g_{02}(z) \left( \hat{V}_{+} + \hat{V}_{-} \right). \label{eq:MCMatrix}
 \end{eqnarray}
-Here, we have defined the auxiliary effective refractive index $\omega_{y}(z) = (\omega_{0}(z) + \omega_{1}(z) - 2 \omega_{2}(z))/2$, $\omega_{i}(z)= \omega_{0}(z)-\omega_{1}(z)$, and used the following representation for the $SU(3)$ group \cite{Ticciati1999}, 
+Here, we have defined the auxiliary effective refractive index $\omega_{y}(z) = \left[ \omega_{0}(z) + \omega_{1}(z) - 2 \omega_{2}(z)\right]/2$, $\omega_{i}(z)= \omega_{0}(z)-\omega_{1}(z)$, and used the following representation for the $SU(3)$ group \cite{Ticciati1999}, 
 \begin{eqnarray}
 \hat{Y} = \frac{1}{3} \left( \begin{array}{ccc} 
 1&0&0\\0&1&0\\0&0&-2    \end{array}\right), \quad
@@ -134,13 +135,13 @@ such that,
 \begin{eqnarray}
 	\hat{U}(z) =  e^{ \frac{i}{3} \int_{0}^{z} ( \omega_{0}(\zeta) + \omega_{1}(\zeta) + \omega_{2}(\zeta) ) d\zeta} ~\hat{\mathcal{U}}(z).
 \end{eqnarray}
-For the $SU(3)$ part, Wei and Norman demonstrated that any such equation can be treated by an algebraic method that provides the following propagator \cite{Wei1963p575},
+Now, for the $SU(3)$ part $\hat{\mathcal{U}}(z)$, Wei and Norman demonstrated that any such equation can be treated by an algebraic method providing the following propagator \cite{Wei1963p575},
 \begin{eqnarray}
 	\hat{\mathcal{U}}(z) = \prod_{j=1}^{8} e^{i \theta_{j}(z) \hat{X}_{j}},
 \end{eqnarray}
 where the $su(3)$ algebra elements, $e^{i \theta_{j}(z) \hat{X}_{j}}$, are just the exponential map of the group generators, $\left\{ \hat{Y}, \hat{I}_{0}, \hat{I}_{\pm}, \hat{U}_{\pm}, \hat{V}_{\pm} \right\}$, and the functions $\theta_{j}(z)$ are complex functions ruled by the dynamics provided by the mode-coupling matrix, $\hat{H}$.
 Note, there is no apriori ordering of $su(3)$ elements to write the propagator. 
-However, the values of the $\theta_{j}(z)$ functions do depend on the chosen order \cite{Dattoli1987p1582,Dattoli1991p1247}.
+However, the values of the $\theta_{j}(z)$ functions do depend on the chosen order Different orderings have been studied in the quantum optics literature \cite{Dattoli1987p1582,Dattoli1991p1247,Dattoli1990p236,Gnutzmann1998p9871}.
 We will choose a particular ordering,
 \begin{eqnarray}
 \hat{\mathcal{U}}(z) &=& e^{i \iota_{+}(z) \hat{I}_{+}} e^{i \mu_{+}(z) \hat{U}_{+}}  
@@ -150,7 +151,7 @@ e^{i \nu_{+}(z) \hat{V}_{+}} e^{ \iota_{0}(z) \hat{I}_{0}} \nonumber \\
 that keeps us in line with the idea of understanding propagation through waveguide lattices as generalized Gilmore-Perelomov coherent states \cite{VillanuevaVergara2015p}.
 
 The next step is straightforward but cumbersome, we substitute the formal solution $\vert \mathcal{E}(z) \rangle$, using the propagator above, being careful in keeping the ordering through the derivation process. 
-Then, we use the actions of elements of the $su(3)$ algebra on elements of the $SU(3)$ group \cite{Nelson1967p857} to find the differential equation set for the auxiliary functions, \textcolor{red}{Double Check with Mathematica that these are well copied}
+Then, we use the actions of elements of the $su(3)$ algebra on elements of the $SU(3)$ group \cite{Nelson1967p857} to find the differential equation set for the auxiliary functions,
 \begin{eqnarray}
 	\iota_{+}^{\prime} &=&  g_{01} \iota_{+}^{2} +  \left( g_{02} \nu_{+} + i \omega_{i} \right) \iota_{+}  - i g_{12} \nu_{+} + g_{01}    ,    \label{eq:iota} \\
 	\mu_{+}^{\prime} &=& \left(g_{12} + i g_{02} \iota_{+} \right)\mu_{+}^{2} + \left[ g_{02} \nu_{+} - g_{01} \iota_{+} + \frac{i}{2} \left(2\omega_{y} - \omega_{i} \right)\right] \mu_{+} \nonumber \\ && + i g_{01} \nu_{+} + g_{12}, \\
@@ -182,13 +183,13 @@ Furthermore, we observe that two equations, namely Eq.(\ref{eq:iota}) and Eq.(\r
 Therefore, they are decoupled from the rest. 
 Nonetheless, these two equations prove intractable and we will pursue a different route to finding a solution.
 
-Note, that it is also possible to write the propagator, under this arrangement,
+Note, that the propagator can be written as a matrix,
 \begin{eqnarray}
 \hat{\mathcal{U}}(z) = \left( \begin{array}{ccc} 
 \Xi(z) & \Sigma(z) & \Theta(z) \\
 \Sigma(z) & \Pi(z)    & \Delta(z) \\
 \Theta(z) & \Delta(z) & \Gamma(z)
-\end{array}  \right)
+\end{array}  \right).
 \end{eqnarray}
 For reasons that will become apparent in a moment, we introduce a set of five auxiliary functions,
 \begin{eqnarray}
@@ -212,44 +213,30 @@ The original functions can be put in terms of these auxiliary,
 y_{0}(z) &=& i \frac{3}{2} \log \Gamma(z) .
 \end{eqnarray}
 Note that the phase functions $y_0(z)$ and $i_0(z)$ are of logarithmic nature and the rest are quotients of the products of the solution basis. 
-
-
-We now have a matrix Riccati differential equation for the propagator \cite{Reid1939p414,Levin1959p519}, 
+We now have the simplest matrix differential equation for the propagator \cite{Reid1939p414,Levin1959p519}, 
 \begin{eqnarray}
 \partial_{z} \hat{\mathcal{U}}(z) = i \mathcal{H} \hat{\mathcal{U}}(z) ,
 \end{eqnarray}
-under the initial conditions, 
+with the initial conditions, 
 \begin{eqnarray}
 \Theta(z)= 0 , \quad \Delta(z) =  0, \quad \Sigma(z)= 0, \quad
 \Gamma(z)= 1, \quad \Pi(z)= 1. \label{eq:initsb}
 \end{eqnarray}
-
-
-The differential equation system is overdetermined due to the characteristics of the original matrix and provides the following identities,
+This differential equation system is overdetermined due to the characteristics of the original matrix and provides the following identities,
 \begin{eqnarray}
 g_{01} \left( \Pi - \Xi \right) + g_{02} \Delta - g_{12} \Theta + \omega_{i} \Sigma &=& 0, \\
 g_{01} \Delta + g_{02} \left( \Gamma - \Xi \right) - g_{12} \Sigma + \left(  \omega_{y} +\frac{1}{2}\omega_{i}   \right) \Theta &=& 0, \\
-g_{01} \Theta - g_{02} \Sigma(z) + g_{12} \left( \Gamma - \Pi \right)  + \left(  \omega_{y} - \frac{1}{2}\omega_{i}\right) \Delta &=& 0, \\
+g_{01} \Theta - g_{02} \Sigma(z) + g_{12} \left( \Gamma - \Pi \right)  + \left(  \omega_{y} - \frac{1}{2}\omega_{i}\right) \Delta &=& 0. 
 \end{eqnarray}
 
 
-
-
-
-\textcolor{red}{Coherent states for $SU(3)$ \cite{Gnutzmann1998p9871}}
-
-\textcolor{red}{$SU(3)$ intelligents states on terms of harmonic oscillators \cite{Rowe1999p3604}}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Case of constant couplings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Trimer with constant couplings}
-
+\subsection{Optical trimer}
 While we have provided a formal solution to propagation through the optical trimer, considering a specific solution may help build further intuition. 
-Thus, in this section, we will discuss the special case where all the couplings are independent of the propagation distance.
-For the sake of simplicity, we will introduce the dimensionless propagation parameter $\zeta = g_{01} z$, such that the mode-coupling differential equation becomes 
+For the sake of simplicity, let us now consider the triangular three-waveguide array with constant couplings and identical waveguides and call it an optical trimer. 
+We will introduce the dimensionless propagation parameter $\zeta = g_{01} z$, such that the mode-coupling differential equation becomes 
 \begin{eqnarray}
 - i \partial_{\zeta} \vert \mathcal{E}(\zeta) \rangle = \hat{H} \vert \mathcal{E}(\zeta) \rangle, 
 \end{eqnarray}
@@ -265,19 +252,28 @@ given in terms of the dimensionless parameters,
 \begin{eqnarray}
 \alpha =\frac{g_{02}}{g_{01}}, \quad \beta=\frac{g_{12}}{g_{01}}.
 \end{eqnarray}
-Under this constant mode-coupling matrix, we could use the results presented in the past section to build a particular solution, but it is well known that a set of linear first order differential equations is equivalent to a single linear differential equation of higher order.
-It seems worthwhile deriving such an higher order differential equation for $\Delta(\zeta)$, which is the auxiliary function that connects the two sets of differential equations, Eq.(\ref{eq:set1}) and Eq.(\ref{eq:set2}).
-After some algebra, it is possible to write,
+Now, we can use the results above to build a particular solution, but it is well known that a set of linear first order differential equations is equivalent to a single linear differential equation of higher order.
+After some algebra, we can derive a higher order differential equation for $\Delta(\zeta)$,
 \begin{equation}
 \Delta^{\prime\prime\prime}(\zeta) + i(1+\alpha^2+\beta^2)\Delta ^{\prime}(\zeta) -2 \alpha\beta\Delta(\zeta) = 0,\label{eq:ddiff}
 \end{equation}
-with initial values,
+with boundary conditions, 
 \begin{eqnarray}
-\Delta(0) & = & 0, \\
-\Delta^{\prime}(0) &=& i\beta, \\
-\Delta^{\prime\prime}(0) &=& -\alpha.
+\Delta(0) = 0, \quad \Delta^{\prime}(0) = i\beta, \quad \Delta^{\prime\prime}(0) = -\alpha.
 \end{eqnarray}
-It is easy to see that $\Delta(\zeta)$ has the following solution,
+Note that the remaining auxiliary functions are straightforward to calculate, 
+\begin{eqnarray}
+\Theta(\zeta)&=& \frac{\beta(1+\beta^2)\Delta(\zeta) - i \alpha\Delta^{\prime}(\zeta)+\beta\Delta^{\prime\prime}(\zeta)}
+	{\alpha(1-\beta^2)}  \\
+\Gamma(\zeta)&=& \frac{-(1+\beta^2)\Delta(\zeta) +i \alpha\beta\Delta^{\prime}(\zeta)-\Delta^{\prime\prime}(\zeta)}
+	{\alpha(1-\beta^2)} \\
+\Sigma(\zeta)&=& \frac{\beta(\alpha^2+\beta^2)\Delta(\zeta) -i \alpha\Delta^{\prime}(\zeta)+\beta\Delta^{\prime\prime}(\zeta)}
+	{\alpha^2-\beta^2}  \\
+\Pi(\zeta)&=& \frac{-\alpha(\alpha^2+\beta^2)\Delta(\zeta) +i \beta\Delta^{\prime}(\zeta)-\alpha\Delta^{\prime\prime}(\zeta)}
+	{\alpha^2-\beta^2}.
+\end{eqnarray} 
+
+It is simple to see that $\Delta(\zeta)$ has the following solution,
 \begin{eqnarray}
 \Delta(\zeta) = \delta_{1} \: e^{i \gamma_1 \zeta} + \delta_{2} \: e^{i \gamma_2 \zeta} +  \delta_{3} \: e^{i \gamma_3 \zeta},
 \end{eqnarray}  
@@ -293,17 +289,6 @@ Furthermore, the coefficients are given by
 \delta_{2} &=& \frac{\alpha-\beta(\gamma_1+\gamma_3)}{(\gamma_2-\gamma_1)(\gamma_2-\gamma_3)},\\
 \delta_{3} &=& \frac{\alpha-\beta(\gamma_1+\gamma_2)}{(\gamma_3-\gamma_1)(\gamma_3-\gamma_2)}. 
 \end{eqnarray}  
-The remaining auxiliary functions are straightforward to calculate, 
-\begin{eqnarray}
-\Theta(\zeta)&=& \frac{\beta(1+\beta^2)\Delta(\zeta) - i \alpha\Delta^{\prime}(\zeta)+\beta\Delta^{\prime\prime}(\zeta)}
-	{\alpha(1-\beta^2)}  \\
-\Gamma(\zeta)&=& \frac{-(1+\beta^2)\Delta(\zeta) +i \alpha\beta\Delta^{\prime}(\zeta)-\Delta^{\prime\prime}(\zeta)}
-	{\alpha(1-\beta^2)} \\
-\Sigma(\zeta)&=& \frac{\beta(\alpha^2+\beta^2)\Delta(\zeta) -i \alpha\Delta^{\prime}(\zeta)+\beta\Delta^{\prime\prime}(\zeta)}
-	{\alpha^2-\beta^2}  \\
-\Pi(\zeta)&=& \frac{-\alpha(\alpha^2+\beta^2)\Delta(\zeta) +i \beta\Delta^{\prime}(\zeta)-\alpha\Delta^{\prime\prime}(\zeta)}
-	{\alpha^2-\beta^2}.
-\end{eqnarray} 
 Thus, the propagator functions, $\iota_{\pm}(z)$, $\mu_{\pm}(z)$, $\nu_{\pm}(z)$, $\iota_{0}(z)$ and $y_{0}(z)$, will effectively contain terms involving the three eigenvalues as well as sums and differences thereof.
 
 
@@ -313,7 +298,9 @@ Thus, the propagator functions, $\iota_{\pm}(z)$, $\mu_{\pm}(z)$, $\nu_{\pm}(z)$
 
 \section{Applications}
 
-Let us present some practical examples of optical trimers that may have a feasible experimental realization.
+As we just saw, the optical trimer is simple enough to allow us the construction of a closed form solution and, to our advantage, it is experimentally feasible to realize it.
+Now the obvious question is if there is a use for it.
+In the following, we will show that a judicious choice of coupling parameters provides  different types of well-defined trajectories that can be used for the design of integrated photonic circuits.
 
 
 \subsection{Identical couplings and the discrete Fourier transform}
@@ -329,7 +316,7 @@ is related to the cyclic group in dimension three,
 \begin{eqnarray}
 \hat{H} =  \hat{Z}_{3} + \hat{Z}_{3}^{2} ,
 \end{eqnarray}
-where the generator of the cyclic group, 
+where the generator of the cyclic group are the following, 
 \begin{eqnarray}
 \hat{Z}_{3} &=& \hat{I}_{+} + \hat{U}_{+} + \hat{V}_{-}, \nonumber \\
 &=&\left(
@@ -339,7 +326,11 @@ where the generator of the cyclic group,
  1 & 0 & 0 \\
 \end{array}\right).
 \end{eqnarray}
-It is well known that the cyclic group is diagonalized by the discrete Fourier transform, $\hat{\Lambda} = \hat{F}_{n} \hat{Z}_{n} \hat{F}_{n}^{\dagger}$, where the discrete Fourier transform of rank $n$ is given by the operator $\hat{F}_{n}$,  in the case of $n=3$,
+It is well known that the cyclic group is diagonalized by the discrete Fourier transform, 
+\begin{eqnarray}
+\hat{\Lambda} = \hat{F}_{n} \hat{Z}_{n} \hat{F}_{n}^{\dagger},
+\end{eqnarray}
+ where the discrete Fourier transform of rank $n$ is given by the operator $\hat{F}_{n}$,  in the case of $n=3$,
 \begin{eqnarray}
 \hat{F}_{3} &=& 
 \frac{1}{\sqrt{3}}
@@ -350,7 +341,11 @@ It is well known that the cyclic group is diagonalized by the discrete Fourier t
  1 & e^{-\frac{2 i \pi}{3}} & e^{\frac{2 i \pi}{3}} \\
 \end{array}\right),
 \end{eqnarray}
-and $\hat{\Lambda}$ is a diagonal rank $n$ matrix containing the roots of unity, $\hat{\Lambda}_{mn} = \delta_{m,n} e^{ i \frac{2 \pi}{n} i}$ with $m,n = 0,1,2$.
+and $\hat{\Lambda}$ is a diagonal rank $n$ matrix with the roots of the unit,
+\begin{eqnarray}
+\hat{\Lambda}_{mn} = \delta_{m,n} e^{ i \frac{2 \pi}{n} i}, \quad  m,n = 0,1,2,
+\end{eqnarray} 
+on the diagonal.
 In this particular case, it is possible to compose a propagator,
 \begin{eqnarray}
 U(\zeta) &=& \hat{F}_{3}^{\dagger} e^{i \hat{\Lambda}_{3} \zeta} e^{i \hat{\Lambda}_{3}^{2} \zeta} \hat{F}_{3}, \nonumber \\
@@ -374,7 +369,7 @@ From the propagator, it is possible to see that only two commensurate frequencie
 \begin{figure}[htbp]
 \centering
 \fbox{\includegraphics[width=\linewidth]{Fig3.pdf}}
-\caption{(Color online) Absolute amplitude trajectories, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$, for initial fields, $(\vert E_{0}(0) \vert, \vert E_{1}(0) \vert, \vert E_{2}(0) \vert )$, impinging (a) only the zeroth (black), $(1,0,0)$, first (blue), $(0,1,0)$, and second (red), $(0,0,1)$, waveguides and (b) initial fields impinging two waveguides at a time with and without a relative phase, $(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0)$ (black), $(\frac{1}{\sqrt{2}},\frac{i}{\sqrt{2}},0)$ (blue), and $(\frac{2}{\sqrt{5}},0,\frac{i}{\sqrt{5}})$ (red).}
+\caption{(Color online) Absolute amplitude trajectories, $(\vert \mathcal{E}_{0}(z) \vert, \vert \mathcal{E}_{1}(z) \vert, \vert \mathcal{E}_{2}(z) \vert )$, for initial fields, $(\vert \mathcal{E}_{0}(0) \vert, \vert \mathcal{E}_{1}(0) \vert, \vert \mathcal{E}_{2}(0) \vert )$, impinging (a) only the zeroth (solid black), $(1,0,0)$, first (dashed blue), $(0,1,0)$, and second (dotted red), $(0,0,1)$, waveguides and (b) initial fields impinging two waveguides at a time with and without a relative phase, $(1,1,0)/ \sqrt{2}$ (solid black), $(1,i,0)/\sqrt{2}$ (dashed blue), and $(2,0,i)/\sqrt{5}$ (dotted red).}
 \label{fig: Fig3}
 \end{figure}
 
@@ -395,97 +390,51 @@ This symmetry also is reflected by the eigenvalues which are  $\left\{-1, \bar{\
 \bar{\varphi} &=& \frac{1}{2} \left(1-\sqrt{8 \alpha ^2+1}\right),\\
 \varphi &=& \frac{1}{2} \left( 1 + \sqrt{8 \alpha ^2+1} \right).
 \end{eqnarray}
-It is simple to see that $\bar{\varphi} + \varphi = 1$ and the second and third eigenvalue do transform into 
-each other upon applying the complex conjugate(\textcolor{red}{Doesnt make sense to me now, why did I write that? How about, the second
-	and thiird eigenvalues are the roots of $x^2-x-2\alpha^2=0$}). Note that the latter eigenvalue 
-assumes the golden ratio for $\alpha = \sqrt{1/2}$.
-Due to the $\hat{Z}_2$-symmetry the propagator can be calculated directly from the Hamiltonian and can be written as:
+It is simple to see that $\bar{\varphi} + \varphi = 1$ and that the latter eigenvalue 
+becomes the golden ratio for $\alpha = \sqrt{1/2}$.
+Due to the $\hat{Z}_2$-symmetry the propagator can be calculated directly using the group theory approach,
 \begin{eqnarray}
-U(\zeta) = \frac{1}{\varphi -\bar{\varphi}} \left(
-\begin{array}{ccc}
-f(\zeta) & g(\zeta) &  h(\zeta)\\
-g(\zeta) & f(\zeta) & h(\zeta) \\
-h(\zeta) & h(\zeta) & i(\zeta) \\
-\end{array}
-\right)\label{eq:prop2}
+\Delta(\zeta) &=& \Theta(z), \\
+&=& \frac{\alpha}{\varphi - \tilde{\varphi}} \left(  e^{i \zeta \varphi }  -  e^{i \zeta \bar{\varphi} } \right), \\
+\Gamma(\zeta) &=& \frac{1}{\varphi - \tilde{\varphi}} \left( \varphi e^{i \zeta \bar{\varphi} } - \bar{\varphi}  e^{i \zeta \varphi } \right), \\
+\Sigma(\zeta) &=& \frac{1}{2 \left( \varphi - \tilde{\varphi} \right)} \left( \varphi e^{i \zeta \varphi } - \bar{\varphi} e^{i \zeta \bar{\varphi} } \right) - \frac{1}{2} e^{-i \zeta}, \\
+\Pi(\zeta) &=& \Xi(\zeta), \\
+&=& \frac{1}{2 \left( \varphi - \tilde{\varphi} \right)} \left( \varphi e^{i \zeta \varphi } - \bar{\varphi} e^{i \zeta \bar{\varphi} } \right) + \frac{1}{2} e^{-i \zeta}.
 \end{eqnarray}
- with
- \begin{eqnarray}
-f(\zeta) &=& \frac{\varphi}{2} e^{i \zeta \varphi} -\frac{\bar{\varphi}}{2} e^{i \zeta \bar{\varphi} }
- + \frac{1}{2} \left( \varphi -\bar{\varphi} \right) e^{-i \zeta}, \label{eq:ticF1}\\
-g(\zeta) &=& \frac{\varphi}{2} e^{i \zeta \varphi } - \frac{\bar{\varphi}}{2} e^{i \zeta \bar{\varphi} } - \frac{1}{2} \left( \varphi -\bar{\varphi}\right)  e^{-i \zeta}, \\
-h(\zeta) &=& \alpha \left(  e^{i \zeta \varphi }  -  e^{i \zeta \bar{\varphi} } \right),\\
-i(\zeta) &=&   \varphi e^{i \zeta \bar{\varphi} } - \bar{\varphi}  e^{i \zeta \varphi } \label{eq:ticF2} 
-\end{eqnarray}
-In operator form the propagator yields
-\begin{eqnarray}
-U(\zeta)=\frac{g(\zeta)}{\varphi -\bar{\varphi}}\;(I_{+}+I_{-})
-+\frac{h(\zeta)}{\varphi -\bar{\varphi}}\;(U_{+}+U_{-}+V_{+}+V_{-})
-\nonumber\\
-+\frac{2}{3}\frac{f(\zeta)-i(\zeta)}{\varphi -\bar{\varphi}}\;(U_{0}+V_{0})  
-+\frac{1}{3}\frac{i(\zeta)+2f(\zeta)}{\varphi -\bar{\varphi}}\;\mathbbm{1}
-\end{eqnarray}
-\newline
-Obviously the three eigenvalues are stationary point of the system. 
-However,the particular symmetry of the system might allow for further
-interesting states. \newline
-Looking at the propagator functions (\ref{eq:ticF1}) to (\ref{eq:ticF2}) reveals that 
-two of the equations, namely $h(\zeta)$ and $i(\zeta)$ depend on only two of the three
-eigenfrequencies, $\varphi$ and $\bar{\varphi}$. Equation (\ref{eq:prop2}) further reveals that the 
-evolution of the third component only depends on those two equations $h(\zeta)$ and $i(\zeta)$.
-Now one can hope that if we chose the initial eigenstate accordingly one of the two 
-eigenfrequencies that appear in the evolution of the third component will cancel out. That is, if
-the evolution only depends on a single frequency, it will only change in phase and the 
-amplitude will remain immutable. \newline
-Hence, lets look for such a state where no energy transfer into or out of the third component occurs. Without loss of 
-generality we can assume that the state-vector at a given time bears following form:
+
+Obviously the three eigenvalues are stationary points of the system. 
+However, this particular symmetry might allow further interesting states.
+Note that the auxiliary functions $\Delta(\zeta)$ and $\Gamma(\zeta)$ depend on only two of the three eigenfrequencies, $\varphi$ and $\bar{\varphi}$. 
+Furthermore, a little bit of algebra considering a initial state without any field impinging the zeroth waveguide, $\mathcal{E}_{0}=0$, reveals that propagation in the second waveguide, $\mathcal{E}_{2}(z)$, only depends on those two auxiliary functions, $\Delta(\zeta)$ and $\Gamma(\zeta)$,
 \begin{equation}
-\mathcal{E}(\zeta=0)=\left( \begin{array}{c}
-0 \\
-\mathcal{E}_2(0) \\
-\mathcal{E}_3(0)
-\end{array} \right)	
-\end{equation}   
-Which implies that the third component evolves as:
-\begin{equation}
-(\varphi -\bar{\varphi})\mathcal{E}_3(\zeta) = h(\zeta)\mathcal{E}_2(0)
-+i(\zeta)\mathcal{E}_3(0)
+\mathcal{E}_{2}(\zeta) = \Delta(\zeta)\mathcal{E}_{1}(0)
++\Gamma(\zeta)\mathcal{E}_{2}(0).
 \end{equation}
-As argued above the third waveguide will not change in amplitude if one of the 
-two eigenfrequencies cancel out. This is fulfilled if either of the two following conditions
-is met:
+Now, we can hope that choosing a proper input will cancel out one of the two 
+eigenvalues that appear in the evolution of the field amplitude at the second waveguide.
+That is, if the evolution only depends on a single eigenvalue, it will only change in phase and the field amplitude will remain immutable. 
+Hence, lets look for such a state where no energy transfer into or out of the second waveguide occurs. 
+This is fulfilled if either of the two following conditions is met,
 \begin{eqnarray}
-\mathcal{E}_2(0)=\mathcal{E}_3(0)\frac{\varphi}{\alpha}\quad or \quad
-\mathcal{E}_2(0)=\mathcal{E}_3(0)\frac{\bar{\varphi}}{\alpha}
+\mathcal{E}_{1}(0)= \frac{\varphi}{\alpha} \mathcal{E}_{2}(0)\quad \mathrm{or} \quad
+\mathcal{E}_{1}(0)= \frac{\bar{\varphi}}{\alpha} \mathcal{E}_{2}(0).
 \end{eqnarray}
-Consequently we obtain two solutions for a state with stationary amplitude in the third waveguide.
- Without infringing general validity we can normalise the initial state such that the amplitude of the third component is one, ie $\mathcal{E}_3(0)=1$.
- Then the time evolution of the system is given by:
-\begin{equation} \label{eq:statAmp1}
-\mathcal{E}_{\varphi}(\zeta)=\left( \begin{array}{c}
-\frac{g(\zeta)}{\varphi -\bar{\varphi}}\frac{\varphi}{\alpha}+\frac{h(\zeta)}{\varphi -\bar{\varphi}} \\
-\frac{f(\zeta)}{\varphi -\bar{\varphi}}\frac{\varphi}{\alpha}+\frac{h(\zeta)}{\varphi -\bar{\varphi}} \\
+Consequently we obtain two solutions for a state with stationary amplitude in the second waveguide.
+Without loss of generality, we can give the propagated amplitude vector up to a normalization constant,
+\begin{equation} \label{eq:StatAmp}
+\vert \mathcal{E}_{x}(\zeta) \rangle =\left( \begin{array}{c}
+\frac{\varphi}{\alpha} \Sigma(\zeta) + \Delta(\zeta) \\
+\frac{\varphi}{\alpha} \Pi(z) + \Delta(\zeta) \\
 e^{i\zeta\varphi}
-\end{array} \right)	
-\end{equation}
-and
-\begin{equation} \label{eq:statAmp2}
-\mathcal{E}_{\bar{\varphi}}(\zeta)=\left( \begin{array}{c}
-\frac{g(\zeta)}{\varphi -\bar{\varphi}}\frac{\bar{\varphi}}{\alpha}+\frac{h(\zeta)}{\varphi -\bar{\varphi}} \\
-\frac{f(\zeta)}{\varphi -\bar{\varphi}}\frac{\bar{\varphi}}{\alpha}+\frac{h(\zeta)}{\varphi -\bar{\varphi}} \\
-e^{i\zeta\bar{\varphi}}
-\end{array} \right)	
+\end{array} \right)	\quad x= \varphi, \bar{\varphi}.
 \end{equation}
 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[height=4cm]{Fig5.pdf}}
-	\caption{(Color online) Absolute amplitude trajectories, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$,  for the states with stationary 
-		Amplitude in the third component 
-		as obtained in equations (\ref{eq:statAmp1}) and (\ref{eq:statAmp2})}
+	\caption{(Color online) Absolute amplitude trajectories, $(\vert \mathcal{E}_{0}(z) \vert, \vert \mathcal{E}_{1}(z) \vert, \vert \mathcal{E}_{2}(z) \vert )$,  for the states with stationary field amplitude in the second waveguide as obtained in Eq.(\ref{eq:StatAmp}).}
 	\label{fig: Fig5}
 \end{figure}
-
 
 
 
@@ -544,8 +493,8 @@ for other sets of variables.
 
 We can use quadratures,
 \begin{eqnarray}
-\hat{q} = \frac{1}{\sqrt{2}} \left( \hat{a}^{\dagger} + \hat{a} \right), ~ 
-\hat{p} = \frac{i}{\sqrt{2}} \left( \hat{a}^{\dagger} + \hat{a} \right),
+	\hat{q} = \frac{1}{\sqrt{2}} \left( \hat{a}^{\dagger} + \hat{a} \right), ~ 
+	\hat{p} = \frac{i}{\sqrt{2}} \left( \hat{a}^{\dagger} + \hat{a} \right),
 \end{eqnarray}
 and consider classical variables, where we have accounted for the change in the time propagation,
 \begin{eqnarray}
@@ -565,7 +514,7 @@ and consider classical variables, where we have accounted for the change in the 
 		q_{1}(t) \\
 		q_{2}(t)
 	\end{array} \right) , \\
-i \partial_t	
+	i \partial_t	
 	\left( \begin{array}{c} 
 		q_{0}(t) \\
 		q_{1}(t) \\
@@ -590,13 +539,13 @@ i \partial_t
 In the classical limit, the canonical pair provided by the creation and annihilation operators can be replaced by the classical canonical pair of intensity and phase, $\left\{ n_{j}, \phi_{j} \right\}$, $ \hat{a}_{j} \rightarrow \sqrt{n_{j}}e^{i \phi_{j}}$. 
 This delivers a classical Hamiltonian, 
 \begin{eqnarray}\label{eq:clHamiltonian}
-H(t) = \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
+	H(t) = \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
 	+ \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} \cos \left( \phi_{j} - \phi_{k} \right),
 \end{eqnarray}
 the equations of motion for the canonical pairs are 
 \begin{eqnarray}
-\partial_t n_j = \frac{\partial H}{\partial \phi_j}\\
-\partial_t \phi_j = - \frac{\partial H}{\partial n_j}  
+	\partial_t n_j = \frac{\partial H}{\partial \phi_j}\\
+	\partial_t \phi_j = - \frac{\partial H}{\partial n_j}  
 \end{eqnarray}
 and these are the coupled mode equations describing the evolution of intensity and phase.
 
@@ -619,10 +568,10 @@ attend to finding the corresponding boundary which we also refer to as the envel
 %We are plotting the absolute amplitudes $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$, thus the trajectories will are on an octant of the unit sphere.
 
 \begin{figure}[htbp]
-\centering
-\fbox{\includegraphics[width=\linewidth]{Fig2.pdf}}
-\caption{(Color online) Absolute amplitude trajectories, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$, for initial random fields impinging random optical trimmers with constant parameters.}
-\label{fig: Fig2}
+	\centering
+	\fbox{\includegraphics[width=\linewidth]{Fig2.pdf}}
+	\caption{(Color online) Absolute amplitude trajectories, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$, for initial random fields impinging random optical trimmers with constant parameters.}
+	\label{fig: Fig2}
 \end{figure}
 
 %Dealing with the problem in the intensity-phase picture does not make it easier to solve but it provides insight.
@@ -639,8 +588,8 @@ $n_1,n_2$ and $n_3$ the energy is maximised when all three phases
 are zero. Consequently the envelope is defined by all triplets
 $n_1,n_2$ and $n_3$ which fulfil following condition
 \begin{equation}
-H_{Bndry}(n_1,n_2,n_3) := \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
-+ \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} = E,	
+	H_{Bndry}(n_1,n_2,n_3) := \sum_{j=0}^{2} \omega_{j}(t) n_{j}  
+	+ \sum_{j \neq k = 0}^{2} g_{jk} \sqrt{n_{j} n_{k}} = E,	
 \end{equation}
 
 Due to energy conservation, the three intensities are not 
@@ -651,8 +600,8 @@ Numerically, once a given set of initial intensities and/or
 energy was chosen $H_{Bndry}(n_1,n_2) \rightarrow E$ the 
 trajectory of the envelope is characterised by the following differential equation:    
 \begin{eqnarray}
-\frac{\partial H_{Bndry}}{\partial n_1}\delta n_1 + 
-\frac{\partial H_{Bndry}}{\partial n_2}\delta n_2 = 0
+	\frac{\partial H_{Bndry}}{\partial n_1}\delta n_1 + 
+	\frac{\partial H_{Bndry}}{\partial n_2}\delta n_2 = 0
 \end{eqnarray}
 
 Having obtained the envelope of the union of all trajectories we 
@@ -666,7 +615,7 @@ the explicit solution for the trajectory.
 Our solution is most easily expressed as 
 solution to equation (\ref{eq:principal}) which is given by:
 \begin{eqnarray}
-\mathcal{E}(t) = a_1 e_1 e^{i \omega_1 t} + a_2 e_2 e^{i \omega_2 t} +a_3 e_3 e^{i \omega_3 t} 
+	\mathcal{E}(t) = a_1 e_1 e^{i \omega_1 t} + a_2 e_2 e^{i \omega_2 t} +a_3 e_3 e^{i \omega_3 t} 
 \end{eqnarray}
 where $e_1,e_2$ and $e_3$ are the eigenvectors with corresponding eigenfrequencies $\omega_1, \omega_2$ and $\omega_3$. Parameters $a1, a2$ and $ a3$ are chosen in accordance with the initial values $n_1$ and $n_2$. Note 
 that $n_j = \mathcal{E}_j\mathcal{E^*}_j$
@@ -675,7 +624,7 @@ Incommensurate trajectories are
 characterised by broken periodicity and 
 we can introduce a phase relevant parameter which controls/mimics the incommensurability: 
 \begin{eqnarray}
-\mathcal{E}(t, \phi) = a_1 e_1 e^{i \omega_1 t + \phi} + a_2 e_2 e^{i \omega_2 t} +a_3 e_3 e^{i \omega_3 t} 
+	\mathcal{E}(t, \phi) = a_1 e_1 e^{i \omega_1 t + \phi} + a_2 e_2 e^{i \omega_2 t} +a_3 e_3 e^{i \omega_3 t} 
 \end{eqnarray}
 The parameter $\phi$ acts such that 
 a given trajectory or more precisely a section of the trajectory is offset in a
@@ -684,30 +633,30 @@ This however can not hold true at the
 boundary or envelope and hence we establish
 following condition for the envelope:
 \begin{eqnarray}
-\frac{ (\frac{\partial n_1}{\partial t}) }{ (\frac{\partial n_2}{\partial t}) } = \frac{( \frac{\partial n_1}{\partial \phi})}{(\frac{\partial n_2}{\partial \phi}) } 	
+	\frac{ (\frac{\partial n_1}{\partial t}) }{ (\frac{\partial n_2}{\partial t}) } = \frac{( \frac{\partial n_1}{\partial \phi})}{(\frac{\partial n_2}{\partial \phi}) } 	
 \end{eqnarray}
 which is equal to:
 \begin{eqnarray}
-D(t, \phi):=Det[\left(  \begin{array}{cc} 
-\frac{\partial n_1}{\partial t} & \frac{\partial n_2}{\partial t} \\
-\frac{\partial n_1}{\partial \phi} & \frac{\partial n_2}{\partial \phi} 
-\end{array} \right)] = 0
+	D(t, \phi):=Det[\left(  \begin{array}{cc} 
+		\frac{\partial n_1}{\partial t} & \frac{\partial n_2}{\partial t} \\
+		\frac{\partial n_1}{\partial \phi} & \frac{\partial n_2}{\partial \phi} 
+	\end{array} \right)] = 0
 \end{eqnarray}
 Accordingly, the envelope can be calculated numerically
- from following differential equation:
+from following differential equation:
 \begin{eqnarray}
-\frac{\partial D(t,\phi)}{\partial t} \delta t +
-\frac{\partial D(t,\phi)}{\partial \phi} \delta \phi = 0
+	\frac{\partial D(t,\phi)}{\partial t} \delta t +
+	\frac{\partial D(t,\phi)}{\partial \phi} \delta \phi = 0
 \end{eqnarray}
 
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[height=4cm]{Fig4.pdf}}
 	\caption{(Color online) Absolute amplitude trajectories, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$,  for two 
-	distinct trajectories pertaining to 
-	the energy E. The boundary 
-	of all possible trajectories corresponding to energy E. The envelopes of the indivudual trajectories are are calculated according to equation ().} 
-	 
+		distinct trajectories pertaining to 
+		the energy E. The boundary 
+		of all possible trajectories corresponding to energy E. The envelopes of the indivudual trajectories are are calculated according to equation ().} 
+	
 	\label{fig: Fig4}
 \end{figure}
 
@@ -770,4 +719,13 @@ In this case, the remaining auxiliary functions are given by the following expre
 For example, the case of a constant coupling, $g_{01}$, and two sinusoidal coupling functions, 
 \begin{eqnarray}
 g(z) = g_{01} \left[ 1 + \alpha \sin \left( k z \right) \right], \quad \vert \alpha \vert < 1,
+\end{eqnarray}
+
+In operator form the propagator yields
+\begin{eqnarray}
+U(\zeta)=\Sigma(\zeta)\;(I_{+}+I_{-})
++\Delta(\zeta)\;(U_{+}+U_{-}+V_{+}+V_{-})
+\nonumber\\
++\frac{2}{3}\left[ \Pi(\zeta) - \Gamma(\zeta) \right]\;(U_{0}+V_{0})  
++\frac{1}{3}\left[ \Gamma(\zeta) + 2 \Pi(\zeta) \right]\;\mathbbm{1}.
 \end{eqnarray}
