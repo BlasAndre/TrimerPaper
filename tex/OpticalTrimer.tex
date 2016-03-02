@@ -3,7 +3,7 @@
 						
 \usepackage{bbm}
 
-\journal{josaa} % Choose journal (ao, ol, josaa, josab)
+\journal{josab} % Choose journal (ao, ol, josaa, josab)
 
 \setboolean{shortarticle}{false} % true = letter, false = research article
 
@@ -51,7 +51,7 @@ In most of the reported literature, optimization seems the standard approach  fa
 This has also impacted the design of planar three-waveguide couplers that, for example,  have provided fast, robust directional beam coupling designed either by standard optimization \cite{Ng1999p475,Schneider2001p129,Narevicius2005p3362} or by quantum analogies \cite{Paspalakis2006p30,Salandrino2009p4524,Tseng2013p2478,RodriguezLara2014p013802}.
 
 Here, our aim is to motivate photonic designers to go beyond the standard analogies between photonic lattices and quantum systems. 
-We will try our best to bridge the gap between theoretical physics and optics to show how the underlying symmetries of a photonic lattice can shed light into the design process. 
+We will try our best to bridge the gap between theoretical physics and optics to show how the underlying symmetries of a photonic lattice can shed light into \textcolor{red}{onto} the design process. 
 For this, we will use a general version of the three-waveguide coupler.
 In the next section, we will introduce the mode-coupling model and expose its underlying $SU(3)$ symmetry. 
 Then, we will construct a propagator for any given physical configuration using a Gilmore-Perelomov coherent state approach \cite{VillanuevaVergara2015p}.
@@ -75,7 +75,7 @@ g_{01}(z) & \omega_{1}(z) & g_{12}(z) \\
 g_{02}(z) & g_{12}(z) & \omega_{2}(z)
 \end{array} \right) \left( \begin{array}{c} \mathcal{E}_{0}(z) \\ \mathcal{E}_{1}(z) \\  \mathcal{E}_{2}(z) \end{array} \right).
 \end{eqnarray}
-Here, the complex field amplitude at the $j$th waveguide is given by $\mathcal{E}_{j}(z)$, the effective refractive index at the $j$th waveguide is $\omega_{j}(z)$, and the effective coupling between the $j$th and $k$th waveguides is $g_{jk}(z)$.
+Here, the complex field amplitude at the $j$th waveguide is given by $\mathcal{E}_{j}(z)$, the effective refractive index at the $j$th waveguide is $\omega_{j}(z)$, and the effective coupling between the $j$th and $k$th waveguides \textcolor{red}{waveguide} is $g_{jk}(z)$.
 These complex field equations can be cast in a Schr\"odinger-like form \cite{RodriguezLara2015p068014},
 \begin{eqnarray}
 - i \partial_{z} \vert \mathcal{E}(z) \rangle = \hat{H}(z) \vert \mathcal{E}(z) \rangle,\label{eq:SchLike}
@@ -86,8 +86,8 @@ Experimental realization of this model include, but are not limited to, laser in
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=\linewidth]{Fig3.pdf}}
-\caption{(Color online) Three experimentally feasible realization for triangular waveguide couplers, (a) inscribed photonic waveguides or multicore optical fibers, (b) whispering-gallery mode cavities, or (b) microwave resonators.}
+\fbox{\includegraphics[width=\linewidth]{Fig1.pdf}}
+\caption{(Color online) Some experimentally feasible realizations for triangular waveguide couplers, (a)  multicore optical fibers or inscribed photonic waveguides, (b) whispering-gallery mode cavities.}
 \label{fig:Fig1}
 \end{figure}
 
@@ -142,7 +142,7 @@ due to the fact that we can understand matrices $\hat{I}_{\pm}$, $\hat{U}_{\pm}$
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=\linewidth]{Fig3.pdf}}
+\fbox{\includegraphics[width=\linewidth]{Fig2.pdf}}
 \caption{(Color online) Effective refractive indices and couplings between the waveguides as described by the $SU(3)$ group elements.}
 \label{fig:Fig2}
 \end{figure}
@@ -311,6 +311,15 @@ Furthermore, the coefficients are given by
 \delta_{3} &=& \frac{\alpha-\beta(\gamma_1+\gamma_2)}{(\gamma_3-\gamma_1)(\gamma_3-\gamma_2)}. 
 \end{eqnarray}  
 Thus, the propagator functions, $\iota_{\pm}(z)$, $\mu_{\pm}(z)$, $\nu_{\pm}(z)$, $\iota_{0}(z)$ and $y_{0}(z)$, will effectively contain terms involving the three eigenvalues as well as sums and differences thereof.
+Figure \ref{fig: Fig3} shows the trajectories described by the absolute value of the field amplitudes, $\vert \mathcal{E}_{j}(z)\vert$, as they propagate through the constant optical trimer with random parameters and initial field distribution calculated provided by the group theory approach.
+
+\begin{figure}[htbp]
+\centering
+\fbox{\includegraphics[width=\linewidth]{Fig3.pdf}}
+\caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert \mathcal{E}_{0}(z) \vert, \vert \mathcal{E}_{1}(z) \vert, \vert \mathcal{E}_{2}(z) \vert )$, for two constant optical trimers with random parameters and random normalized initial field distributions.}
+\label{fig: Fig3}
+\end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -386,16 +395,16 @@ Figure \ref{fig: Fig3}(a) shows the response to impulse input, $ \mathcal{E}_{k}
 Figure \ref{fig: Fig3}(b) shows the trajectories given by initial field superpositions of the more general form: $\mathcal{E}_{j} = \alpha_{j} e^{i \phi t}$ with $\alpha \in \mathbb{R}$ and $\sum_{j} \vert \alpha_{j} \vert^{2} =1$.
 Note that the roots of the mode-coupling matrix, $\hat{\mathcal{H}}$, are doubly degenerate and commesurate, 
 \begin{eqnarray}
-\gamma_{1,2} = -1, \quad \gamma_{2} = 2.
+\gamma_{1,2} = -1, \quad \gamma_{2\textcolor{red}{3}} = 2.
 \end{eqnarray}
 Thus, propagation involves just two commensurate eigenvalues and all the possible field amplitude propagation trajectories, $\left( \vert \mathcal{E}_{0} \vert, \vert \mathcal{E}_{1} \vert, \vert \mathcal{E}_{2} \vert  \right)$, will be closed and well defined as those shown in Fig.\ref{fig: Fig3}.
 
 
 \begin{figure}[htbp]
 \centering
-\fbox{\includegraphics[width=\linewidth]{Fig3.pdf}}
+\fbox{\includegraphics[width=\linewidth]{Fig4.pdf}}
 \caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert \mathcal{E}_{0}(z) \vert, \vert \mathcal{E}_{1}(z) \vert, \vert \mathcal{E}_{2}(z) \vert )$, for initial fields impinging (a) only the zeroth (solid black), $(1,0,0)$, first (dashed blue), $(0,1,0)$, and second (dotted red), $(0,0,1)$, waveguides and (b) initial fields impinging two waveguides at a time with and without a relative phase, $(1,1,0)/ \sqrt{2}$ (solid black), $(1,i,0)/\sqrt{2}$ (dashed blue), and $(2,0,i)/\sqrt{5}$ (dotted red).}
-\label{fig: Fig3}
+\label{fig: Fig4}
 \end{figure}
 
 
@@ -460,8 +469,8 @@ Figure \ref{fig:Fig4} shows propagation trajectories for the absolute field ampl
 \begin{figure}[htbp]
 	\centering
 	\fbox{\includegraphics[height=4cm]{Fig5.pdf}}
-	\caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert \mathcal{E}_{0}(z) \vert, \vert \mathcal{E}_{1}(z) \vert, \vert \mathcal{E}_{2}(z) \vert )$,  for the states with stationary field amplitude in the second waveguide described by Eq.(\ref{eq:StatAmp}) with (a) $\alpha = 1 / \sqrt{2}$ and (b) $\alpha = 1 / 2$ .}
-	\label{fig:Fig4}
+	\caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert \mathcal{E}_{0}(z) \vert, \vert \mathcal{E}_{1}(z) \vert, \vert \mathcal{E}_{2}(z) \vert )$,  for the states with stationary field amplitude in the second waveguide related to $\varphi$ (solid black) and $\bar{\varphi}$ (dashed blue) described by Eq.(\ref{eq:StatAmp}) with (a) $\alpha = 1 / \sqrt{2}$ and (b) $\alpha = 1 / 2$ .}
+	\label{fig:Fig5}
 \end{figure}
 
 
@@ -545,9 +554,9 @@ Figure \ref{fig:Fig5} shows propagation trajectories of the absolute field ampli
 
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[width=\linewidth]{Fig2.pdf}}
-	\caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$, for initial random fields impinging random optical trimmers with constant parameters yielding ergodic trajectories.}
-	\label{fig:Fig5}
+	\fbox{\includegraphics[width=\linewidth]{Fig6.pdf}}
+	\caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$, for initial random fields impinging random triangular three-waveguide couplers with constant parameters yielding ergodic trajectories.}
+	\label{fig:Fig6}
 \end{figure}
 
 Let us focus our attention now on the vast class of incommensurate trajectories and, for the sake of simplicity, keep using optical devices that do not change with the propagation distance.
@@ -576,7 +585,8 @@ Numerically, once a given set of initial intensities or energy is chosen, the en
 This is the envelope for all possible trajectories with energy $\epsilon$.
 Figure \ref{fig:Fig6} shows such envelope as a solid black line.
 
-Now, we can turn to calculate the envelope of a single trajectory. 
+Now, we can turn to calculate
+\textcolor{red}{calculating} the envelope of a single trajectory. 
 We have already discussed how to find the propagator for any given three-waveguide coupler. 
 In the particular case at hand, constant effective refractive indices and couplings, the propagated field can be written as, 
 \begin{eqnarray}
@@ -609,12 +619,11 @@ Figure \ref{fig:Fig6} shows two examples of envelopes of individual trajectories
 
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[height=4cm]{Fig4.pdf}}
+	\fbox{\includegraphics[height=4cm]{Fig7.pdf}}
 	\caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert E_{0}(z) \vert, \vert E_{1}(z) \vert, \vert E_{2}(z) \vert )$,  for two 
-		distinct trajectories pertaining to the energy $\epsilon$. The boundary 
-		of all possible trajectories (solid black) and the envelopes of the indivudual  trajectories (dashed blue and dotted red) are calculated according to equation Eq.(\ref{eq:EnvInd}).} 
+		distinct trajectories pertaining to the energy $\epsilon$ (solid gray). The boundary of all possible trajectories (solid black) and the envelopes of the individual  trajectories (dashed blue and dotted red) are calculated according to equation Eq.(\ref{eq:EnvInd}).} 
 	
-	\label{fig:Fig6}
+	\label{fig:Fig7}
 \end{figure}
 
 
