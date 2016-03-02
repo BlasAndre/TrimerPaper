@@ -389,9 +389,10 @@ U(\zeta) &=& \hat{F}_{3}^{\dagger} e^{i \hat{\Lambda}_{3} \zeta} e^{i \hat{\Lamb
 \end{eqnarray}
 where we have used the fact that the elements of the cyclic group of rank $3$ commute between them, $\left[ \hat{Z}_{3} , \hat{Z}_{3}^{2} \right] = 0$ because $\hat{Z}_{3}^{3} = \mathbb{1}_{3}$.  
 
-Figure \ref{fig: Fig3} shows the trajectories described by the absolute value of the field amplitudes, $\vert \mathcal{E}_{j}(z)\vert$, as they propagate. 
+Figure \ref{fig: Fig4} shows the trajectories described by the absolute value of the field amplitudes, $\vert \mathcal{E}_{j}(z)\vert$, as they propagate. 
+\textcolor{red}{All trajectories will lie on...}
 All of trajectories will lie over the surface of an octant of the sphere due to unitary propagation, $\sum_{j} \vert \mathcal{E}_{j}(z) \vert^2 =1$.
-Figure \ref{fig: Fig3}(a) shows the response to impulse input, $ \mathcal{E}_{k}(0)  = \delta_{j,k}$ with $j=0,1,2$ and a fixed $k=0,1,2$. 
+Figure \ref{fig: Fig4}(a) shows the response to impulse input, $ \mathcal{E}_{k}(0)  = \delta_{j,k}$ with $j=0,1,2$ and a fixed $k=0,1,2$. 
 Figure \ref{fig: Fig3}(b) shows the trajectories given by initial field superpositions of the more general form: $\mathcal{E}_{j} = \alpha_{j} e^{i \phi t}$ with $\alpha \in \mathbb{R}$ and $\sum_{j} \vert \alpha_{j} \vert^{2} =1$.
 Note that the roots of the mode-coupling matrix, $\hat{\mathcal{H}}$, are doubly degenerate and commesurate, 
 \begin{eqnarray}
@@ -464,7 +465,7 @@ e^{i\zeta\varphi}
 \end{array} \right)	\quad x= \varphi, \bar{\varphi},
 \end{equation}
 up to a normalization constant $\mathcal{N}$.
-Figure \ref{fig:Fig4} shows propagation trajectories for the absolute field amplitudes in an isoceles constant optical trimer with parameter $\alpha = 1 /\sqrt{2}$ chosen to provide the golden ratio, Fig. \ref{fig:Fig4}(a), and  $\alpha = 1/ 2$, Fig. \ref{fig:Fig4}(b), with initial field amplitudes provided by Eq.(\ref{eq:IsoIniCon}) ensuring a stable output at the second waveguide.
+Figure \ref{fig:Fig5} shows propagation trajectories for the absolute field amplitudes in an isoceles constant optical trimer with parameter $\alpha = 1 /\sqrt{2}$ chosen to provide the golden ratio, Fig. \ref{fig:Fig5}(a), and  $\alpha = 1/ 2$, Fig. \ref{fig:Fig5}(b), with initial field amplitudes provided by Eq.(\ref{eq:IsoIniCon}) ensuring a stable output at the second waveguide.
 
 \begin{figure}[htbp]
 	\centering
@@ -509,8 +510,8 @@ with $ \sum_{j} \vert \mathcal{E}_{j}(z) \vert^2 = 1$, it yields the same system
 		\mathcal{E}_{2}(t)
 	\end{array} \right),
 \end{eqnarray}
-than coupled-mode theory, Eq.(\ref{eq:CMT}), once we make the substitution $t=-z$. 
-This analogy allowed us to pursuit a group theory approach in the previous sections for the propagation of the field amplitudes but it can also allows to go further and derive equations of motion for different sets of variables.
+than \textcolor{red}{ as }coupled-mode theory, Eq.(\ref{eq:CMT}), once we make the substitution $t=-z$. 
+This analogy allowed us to pursuit a group theory approach in the previous sections for the propagation of the field amplitudes but it can also allows \textcolor{red}{allow us??} to go further and derive equations of motion for different sets of variables.
 
 \subsection{Classical limit and intensity-phase equations}
 For example, if we forget about the single-photon limit and take the classical limit, where the states of light can be taken as coherent states with a high number of photons, then, the canonical pair provided by the creation and annihilation operators can be replaced by the canonical pair of classical intensity, $n_{j}$, and phase, $\phi_{j}$, such that $\hat{a}_{j} \rightarrow \sqrt{n_{j}} e^{i \phi_{j}}$, we obtain a classical Hamiltonian, 
@@ -550,7 +551,7 @@ If the phases are commensurate, the trajectories in phase space will be periodic
 \epsilon = \langle \mathcal{E}(0) \vert \hat{H}(0) \vert \mathcal{E}(0) \rangle.
 \end{eqnarray}  
 For mode-coupling matrices that do not depend on the propagation distance, if the eigenvalues are commensurable, the trajectories in phase space are well-defined and closed, otherwise they will fill a region defined by the initial energy.
-Figure \ref{fig:Fig5} shows propagation trajectories of the absolute field amplitudes for the numerical propagation of random parameter sets and initial conditions yielding incommensurate eigenvalues and, thus, ergodic trajectories.
+Figure \ref{fig:Fig6} shows propagation trajectories of the absolute field amplitudes for the numerical propagation of random parameter sets and initial conditions yielding incommensurate eigenvalues and, thus, ergodic trajectories.
 
 \begin{figure}[htbp]
 	\centering
@@ -563,7 +564,9 @@ Let us focus our attention now on the vast class of incommensurate trajectories 
 In many design circumstances, the exact point-to-point evolution of the field amplitudes is not of primary importance and it suffices to gain information on the general region that will be traversed. 
 This is characterized by the boundary which encompasses the very region. 
 It proves viable to notice that for a given energy, $\epsilon$, and a given set of parameters, $\omega_{j}$ and $g_{jk}$, in most cases, an infinity number of distinct trajectories prevails.
-The conjunction of all these propagation trajectories pertaining a given energy span a path-connected surface.
+The conjunction of all these propagation trajectories pertaining 
+\textcolor{red}{to}
+a given energy span a path-connected surface.
 We will now find the outer boundary, or envelope, of all propagation trajectories related to an initial energy $\epsilon$.
 Equation (\ref{eq:clHamiltonian}) readily reveals that the energy is maximized for given intensities $n_0$, $n_1$ and $n_2$ when all three phases are zero. 
 Consequently, the boundary is defined by all triplets $\left( n_0,n_1,n_2 \right)$ that fulfill the following condition,
@@ -583,7 +586,7 @@ Numerically, once a given set of initial intensities or energy is chosen, the en
 	\frac{\partial H_{B}}{\partial n_2}\delta n_2 = 0.
 \end{eqnarray}
 This is the envelope for all possible trajectories with energy $\epsilon$.
-Figure \ref{fig:Fig6} shows such envelope as a solid black line.
+Figure \ref{fig:Fig7} shows such envelope as a solid black line.
 
 Now, we can turn to calculate
 \textcolor{red}{calculating} the envelope of a single trajectory. 
@@ -595,9 +598,9 @@ In the particular case at hand, constant effective refractive indices and coupli
 where the vectors $\vert e_j \rangle$ are the three normal modes of the coupler with corresponding eigenvalues $\omega_j$ and the normal mode decomposition parameters are defined as the inner product between the normal mode and the initial condition,  $c_{j} = \langle e_{j} \vert \mathcal{E}(0) \rangle$. 
 We can introduce a phase relevant parameter which distorts the ratio between eigenvalues, 
 \begin{eqnarray}
-\vert \mathcal{E}(z, \phi) \rangle = c_0 e^{i \left( \gamma_0 z + \phi \right) } \vert e_0 \rangle, + c_1 e^{i \gamma_1 z} \vert e_1 \rangle + c_2 e^{i \gamma_2 z} \vert e_2 \rangle,
+\vert \mathcal{E}(z, \phi) \rangle = c_0 e^{i \left( \gamma_0 z + \phi \right) } \vert e_0 \rangle + c_1 e^{i \gamma_1 z} \vert e_1 \rangle + c_2 e^{i \gamma_2 z} \vert e_2 \rangle,
 \end{eqnarray}
-The parameter $\phi$ makes a given trajectory or, more precisely, a section of the trajectory, offset in a direction perpendicular to the trajectory.
+The parameter $\phi$ makes a given trajectory or, more precisely, a section of the trajectory, offset in a direction perpendicular to the trajectory \textcolor{red}{Not sure if the sentence is good}.
 This however cannot hold true at the envelope and, hence, we can establish the following condition for the envelope,
 \begin{eqnarray}
 	\frac{ (\frac{\partial n_0}{\partial z}) }{ (\frac{\partial n_1}{\partial z}) } = \frac{( \frac{\partial n_0}{\partial \phi})}{(\frac{\partial n_1}{\partial \phi}) } ,
@@ -615,7 +618,7 @@ Accordingly, the envelope can be calculated from the following differential equa
 	\frac{\partial D(z,\phi)}{\partial z} \delta z +
 	\frac{\partial D(z,\phi)}{\partial \phi} \delta \phi = 0. \label{eq:EnvInd}
 \end{eqnarray}
-Figure \ref{fig:Fig6} shows two examples of envelopes of individual trajectories with particular initial field amplitudes as dashed blue and dotted red lines. 
+Figure \ref{fig:Fig7} shows two examples of envelopes of individual trajectories with particular initial field amplitudes as dashed blue and dotted red lines. 
 
 \begin{figure}[htbp]
 	\centering
@@ -630,7 +633,7 @@ Figure \ref{fig:Fig6} shows two examples of envelopes of individual trajectories
 \section{Conclusion}
 We have shown that it is possible to approach the propagation of electromagnetic field through triangular three-waveguide couplers, in terms of the Lie algebra $su(3)$. 
 We derived a formal solution \`a la Wei-Norman in line with the idea of Gilmore-Perelomov coherent states.
-In order to provide practical examples, we focused our attention on a reduced class of structures where the waveguides are identical and the effective couplings are constant, independent of the propagation distance, and called these systems constant optical trimers. 
+In order to provide practical examples, we focused our attention on a reduced class of structures where the waveguides are identical and the effective couplings are constant, independent of the propagation distance, and called \textcolor{red}{coined them??} these systems constant optical trimers. 
 We established a connection between the equilateral trimer, actually any circular array of waveguides with identical couplings, and the discrete Fourier transform, and between the isoceles trimer and the golden ratio where it is possible to suppress the energy transfer to one of the waveguides. 
 
 We went beyond the standard classical-quantum analogy in the single photon limit and showed that, using the classical limit, it is possible to recover the coupled mode differential equations describing the propagation of intensity and phase.
