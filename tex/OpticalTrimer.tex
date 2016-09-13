@@ -1,3 +1,4 @@
+ % !TeX root = OpticalTrimer.tex
 
 \documentclass[9pt,twocolumn,twoside]{osajnl}
 						
@@ -10,10 +11,11 @@
 \title{Optical trimer, \\ A theoretical physics approach to waveguide couplers}
 
 \author[1]{A. Stoffel}
+\author[2]{S. F. Caballero-Benitez}
 \author[1,*]{B. M. Rodríguez-Lara}
 
 \affil[1]{Instituto Nacional de Astrof\'{\i}sica, \'Optica y Electr\'onica, Calle Luis Enrique Erro No. 1, Sta. Ma. Tonantzintla, Pue. CP 72840, M\'exico}
-
+\affil[2]{Instituto de F\'\i sica, Universidad Nacional Aut\'onoma de M\'exico, and Apartado Postal 20-364, C.P. 01000 M\'exico D. F. M\'exico}
 \affil[*]{Corresponding author: bmlara@inaoep.mx}
 
 \dates{Compiled \today}
@@ -28,7 +30,8 @@ The planar version of this platform has proven valuable in photonic circuit desi
 We show that a group-theory approach can readily provide a starting point for design optimization of the triangular version.
 Our analysis is presented as a practical tutorial on the use of group theory to study photonic lattices for those not familiar with abstract algebra methods.
 In particular, we study the equilateral trimer to show the relation of pearl-necklace arrays with the Discrete Fourier Transform due to their cyclic group symmetry, and the isosceles trimer to show its relation with the golden ratio and its ability to provide stable output at a single waveguide.  
-For the sake of completeness, we go beyond the standard optical-quantum analogy to show that it is possible to derive coupled-mode equations for intensity-phase, and that it is also possible to calculate envelopes for the propagation of all possible inputs belonging to an energy class, as well as individual input field amplitudes, without the need of point-to-point propagation.
+We also study a propagation dependent case of an equilateral trimer that linearly increases or decreases its effective coupling with the propagation distance. 
+For the sake of completeness, we go beyond the standard optical-quantum analogy to show that it is possible to derive coupled-mode equations for intensity and phase, and that it is also possible to calculate envelopes for the propagation of all possible inputs belonging to an energy class, as well as individual input field amplitudes, without the need of point-to-point propagation.
 \end{abstract}
 
 \setboolean{displaycopyright}{true}
@@ -55,8 +58,9 @@ We will try our best to bridge the gap between theoretical physics and optics to
 For this, we will use a general version of the three-waveguide coupler.
 In the next section, we will introduce the mode-coupling model and expose its underlying $SU(3)$ symmetry. 
 Then, we will construct a propagator for any given physical configuration using a Gilmore-Perelomov coherent state approach \cite{VillanuevaVergara2015p}.
-In order to provide practical examples, we will focus on arrays of identical waveguides, which we call optical trimers thereon, with three identical couplings and relate them to the discrete Fourier transform through the cyclic group.
-We will also present results for the optical trimer with two identical couplings, and relate them to the golden ratio and devices allowing a single intensity stable output. 
+In order to provide practical examples, we will focus on arrays of identical waveguides, which we call optical trimers thereon, with three identical constant couplings and relate them to the discrete Fourier transform through the cyclic group.
+We will also present results for the optical trimer with just two identical couplings, and relate them to the golden ratio and devices allowing a single intensity stable output. 
+Furthermore, we will study the case of a shrinking or expanding equilateral trimer where the three identical effective couplings vary with the propagation distance.
 Next, for the sake of completeness, we will show that it is possible to recover the coupled mode theory equations for field intensity and phase if we use the optical-quantum analogy in the classical limit.
 We will also show that a classical mechanical analysis of the optical-quantum analogy can predict boundary limits for all possible propagation classes defined by a device, as well as propagation envelopes for individual initial inputs without the need of actual propagation.
 Finally, we will present a summary and discuss possible extensions allowed by linear and nonlinear three-waveguide couplers.
@@ -75,7 +79,7 @@ g_{01}(z) & \omega_{1}(z) & g_{12}(z) \\
 g_{02}(z) & g_{12}(z) & \omega_{2}(z)
 \end{array} \right) \left( \begin{array}{c} \mathcal{E}_{0}(z) \\ \mathcal{E}_{1}(z) \\  \mathcal{E}_{2}(z) \end{array} \right).
 \end{eqnarray}
-Here, the complex field amplitude at the $j$th waveguide is given by $\mathcal{E}_{j}(z)$, the effective refractive index at the $j$th waveguide is $\omega_{j}(z)$, and the effective coupling between the $j$th and $k$th waveguides is $g_{jk}(z)$.
+Here, the complex field amplitude at the $j$th waveguide is given by $\mathcal{E}_{j}(z)$, the real effective refractive index at the $j$th waveguide is $\omega_{j}(z)$, and the real effective coupling between the $j$th and $k$th waveguides is $g_{jk}(z)$.
 These complex field equations can be cast in a Schr\"odinger-like form \cite{RodriguezLara2015p068014},
 \begin{eqnarray}
 - i \partial_{z} \vert \mathcal{E}(z) \rangle = \hat{H}(z) \vert \mathcal{E}(z) \rangle,\label{eq:SchLike}
@@ -172,37 +176,65 @@ e^{i \nu_{+}(z) \hat{V}_{+}} e^{ \iota_{0}(z) \hat{I}_{0}} \nonumber \\
 that keeps us in line with the idea of understanding propagation through waveguide lattices as generalized Gilmore-Perelomov coherent states \cite{VillanuevaVergara2015p}.
 
 The next step is straightforward but cumbersome, we substitute the formal solution, $\vert \mathcal{E}(z) \rangle$, using the propagator above and being careful in keeping the ordering through the derivation process. 
-Then, we use the actions of elements of the $su(3)$ algebra on elements of the $SU(3)$ group \cite{Nelson1967p857} to find the differential equation set for the auxiliary functions,
+Then, we use the actions of elements of the $su(3)$ algebra on elements of the $SU(3)$ group \cite{Nelson1967p857} to find the differential equation set for the auxiliary functions, this reduces the problem to solving a so-called triangular system where we first need to solve a complex matrix Riccati equation,
+\begin{eqnarray}\label{eq:fstRiccati}
+\left( \begin{array}{c} \iota_{+}^{\prime} \\ \nonumber
+\nu_{+}^{\prime}  \end{array}\right) &=& 
+\left(\begin{array}
+	{c} g_{01} \\ 
+	g_{02}  
+\end{array}\right) \\\nonumber
+&&+ i 
+\left(\begin{array}{cc}  
+ 	\omega_{i} & - g_{12} \\
+ 	- g_{12} & \frac{1}{2} 
+ 	\left[ 2\omega_{y} +
+ 	 \omega_{i}\right]
+\end{array}\right)
+\left( \begin{array}{c} 
+ 	\iota_{+} 
+ 	\\ \nu_{+}
+\end{array}\right)
+\\
+&&+ \left( \begin{array}{c} 
+\iota_{+} 
+\\ \nu_{+}
+\end{array}\right)
+\left(\begin{array}{c}  
+g_{01} \\
+g_{02}
+\end{array}\right)^T
+\left( \begin{array}{c} 
+\iota_{+} 
+\\ \nu_{+}
+\end{array}\right)
+\end{eqnarray}
+then by direct substitution we can get to solve another Riccati equation,
+\begin{eqnarray}\label{eq:sndRiccati}
+\mu_{+}^{\prime} &=& \left(g_{12} + i g_{02} \iota_{+} \right)\mu_{+}^{2} + \left[ g_{02} \nu_{+} - g_{01} \iota_{+} + \frac{i}{2} \left(2\omega_{y} - \omega_{i} \right)\right] \mu_{+} \nonumber \\ && + i g_{01} \nu_{+} + g_{12}.
+\end{eqnarray}
+Once these are solved, the results can be substituted and the rest can be found by direct integration,
 \begin{eqnarray}
-	\iota_{+}^{\prime} &=&  g_{01} \iota_{+}^{2} +  \left( g_{02} \nu_{+} + i \omega_{i} \right) \iota_{+}  - i g_{12} \nu_{+} + g_{01}    ,    \label{eq:iota} \\
-	\mu_{+}^{\prime} &=& \left(g_{12} + i g_{02} \iota_{+} \right)\mu_{+}^{2} + \left[ g_{02} \nu_{+} - g_{01} \iota_{+} + \frac{i}{2} \left(2\omega_{y} - \omega_{i} \right)\right] \mu_{+} \nonumber \\ && + i g_{01} \nu_{+} + g_{12}, \\
-	\nu_{+}^{\prime} &=& g_{02} \nu_{+}^{2} +  \left[ g_{01} \iota_{+} + \frac{i}{2} \left( 2 \omega_{y} + \omega_{i}  \right) \right] \nu_{+}  - i g_{12} \iota_{+} + g_{02}  , \label{eq:mu} \\
-	\iota_{0}^{\prime} &=& \omega_{i} - i 2  g_{01} \iota_{+} + i g_{12} \mu_{+} - g_{02} \left( \iota_{+} \mu_{+} + i \nu_{+} \right) , \\
-	y_{0}^{\prime} &=& \omega_{y} - i\frac{3}{2}  
-	[ g_{02}   \nu_{+} +    
-	( g_{12} + i  g_{02} \iota_{+})\mu_{+}],  \\
-	\nu_{-}^{\prime} &=& g_{02} e^{i  \left( y_0 + \frac{1}{2} \iota_0 \right)}
-	 -  e^{i\iota_{0}}   \left( g_{02} \mu_{+} + i  g_{01} \right) \mu_{-} ,  \\
-	\mu_{-}^{\prime} &=&  e^{i  \left( y_0 - \frac{1}{2} \iota_0 \right)}
-	( g_{12} + i g_{02} \iota_{+}),\\
-	\iota_{-}^{\prime} &=& e^{i \iota_{0}} \left( g_{01} - i g_{02}\mu_{+} \right), 
+\iota_{0}^{\prime} &=& \omega_{i} - i 2  g_{01} \iota_{+} + i g_{12} \mu_{+} - g_{02} \left( \iota_{+} \mu_{+} + i \nu_{+} \right) ,\label{eq:diff1} \\
+y_{0}^{\prime} &=& \omega_{y} - i\frac{3}{2}  
+[ g_{02}   \nu_{+} +    
+( g_{12} + i  g_{02} \iota_{+})\mu_{+}], \label{eq:diff2} \\
+\nu_{-}^{\prime} &=& g_{02} e^{i  \left( y_0 + \frac{1}{2} \iota_0 \right)}
+-  e^{i\iota_{0}}   \left( g_{02} \mu_{+} + i  g_{01} \right) \mu_{-} , \label{eq:mu:min} \\
+\mu_{-}^{\prime} &=&  e^{i  \left( y_0 - \frac{1}{2} \iota_0 \right)}
+( g_{12} + i g_{02} \iota_{+}),\\
+\iota_{-}^{\prime} &=& e^{i \iota_{0}} \left( g_{01} - i g_{02}\mu_{+} \right),\label{eq:iota:min}
 \end{eqnarray}
 where, for the sake of space, we have used $f \equiv f(z)$ and $f' \equiv \partial_{z} f(z)$ for auxiliary functions and couplings.
 
-
 Non-linear differential equations are known to be hard to solve and finding a solution 
 often requires intuition and knowledge of the system being analyzed. 
-Before delving into details, we would like to point out a key feature of passive, lossless optical models that we are analyzing, their mode-coupling matrices are real symmetric, $\hat{H}^{T}(z) = \hat{H}(z)$ where the operation $O^{T}$ stands for transposition,  and, as a direct consequence, the propagator shares the same property,
-\begin{equation}  
-	\hat{U}^{T}(z)=\hat{U}(z).
-\end{equation} 
+Before delving into details, we would like to point out a key feature of passive, lossless optical models that we are analyzing, their mode-coupling matrices are real symmetric, $\hat{H}^{T}(z) = \hat{H}(z)$ where the operation $O^{T}$ stands for transposition,  and, as a direct consequence, the propagator fulfills $\hat{U}^{T}(z) \hat{U}(z) = \mathbb{1}$.
 This feature allows us to conclude that the propagator functions are symmetric,
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:symmCon}
 	\xi_{+}(z)&=&\xi_{-}(z), \quad \xi = \iota, \nu, \mu.
 \end{eqnarray}
-Furthermore, we observe that two equations, namely Eq.(\ref{eq:iota}) and Eq.(\ref{eq:mu}) only include terms of $\iota_{+}(z)$ and $\nu_{+}(z)$ and their derivatives. 
-Therefore, they are decoupled from the rest. 
-Most of the time, numerical methods would be the only way to find these auxiliary functions.
+Most of the time, numerical methods would be the only way to find these auxiliary functions but standard and matrix Riccati equations are well known in the field of mathematical physics and control theory and we can rely on known solutions from those areas.
 
 An alternate approach can be followed if we write the propagator as a matrix,
 \begin{eqnarray}
@@ -395,7 +427,7 @@ Figure \ref{fig: Fig4}(a) shows the response to impulse input, $ \mathcal{E}_{k}
 Figure \ref{fig: Fig3}(b) shows the trajectories given by initial field superpositions of the more general form: $\mathcal{E}_{j} = \alpha_{j} e^{i \phi t}$ with $\alpha \in \mathbb{R}$ and $\sum_{j} \vert \alpha_{j} \vert^{2} =1$.
 Note that the roots of the mode-coupling matrix, $\hat{\mathcal{H}}$, are doubly degenerate and commesurate, 
 \begin{eqnarray}
-\gamma_{1,2} = -1, \quad \gamma_{2\textcolor{red}{3}} = 2.
+\gamma_{1,2} = -1, \quad \gamma_{3} = 2.
 \end{eqnarray}
 Thus, propagation involves just two commensurate eigenvalues and all the possible field amplitude propagation trajectories, $\left( \vert \mathcal{E}_{0} \vert, \vert \mathcal{E}_{1} \vert, \vert \mathcal{E}_{2} \vert  \right)$, will be closed and well defined as those shown in Fig.\ref{fig: Fig4}.
 
@@ -449,18 +481,17 @@ Furthermore, a little bit of algebra considering an initial state without any fi
 Now, we can hope that choosing a proper input will cancel out one of the two 
 eigenvalues that appear in the evolution of the field amplitude at the second waveguide.
 That is, if the evolution only depends on a single eigenvalue, it will only change in phase and the field amplitude at the second waveguide will remain immutable. 
-This is fulfilled when either 
+This is fulfilled when
 \begin{eqnarray}
-\mathcal{E}_{1}(0)= \frac{\varphi}{\alpha} \mathcal{E}_{2}(0)\quad \mathrm{or} \quad
-\mathcal{E}_{1}(0)= \frac{\bar{\varphi}}{\alpha} \mathcal{E}_{2}(0), \label{eq:IsoIniCon}
+\mathcal{E}_{1}(0)= \frac{x}{\alpha} \mathcal{E}_{2}(0), \quad x= \varphi, \bar{\varphi}, \label{eq:IsoIniCon}
 \end{eqnarray}
 are met as initial conditions.
 Without loss of generality, we can give the propagated amplitude vector,
 \begin{equation} \label{eq:StatAmp}
 \vert \mathcal{E}_{x}(\zeta) \rangle = \frac{1}{\sqrt{\mathcal{N}}}\left( \begin{array}{c}
-\frac{\varphi}{\alpha} \Sigma(\zeta) + \Delta(\zeta) \\
-\frac{\varphi}{\alpha} \Pi(z) + \Delta(\zeta) \\
-e^{i\zeta\varphi}
+\frac{x}{\alpha} \Sigma(\zeta) + \Delta(\zeta) \\
+\frac{x}{\alpha} \Pi(z) + \Delta(\zeta) \\
+e^{i x \zeta }
 \end{array} \right)	\quad x= \varphi, \bar{\varphi},
 \end{equation}
 up to a normalization constant $\mathcal{N}$.
@@ -474,10 +505,98 @@ Figure \ref{fig:Fig5} shows propagation trajectories for the absolute field ampl
 \end{figure}
 
 
+\subsection{Z-dependent, identical couplings}
+The discussion and examples above focus on constant coupling terms, ie. terms that do not exhibit z-dependence.
+To unveil and demonstrate the true vigor of the present approach we will, in the remainder of this section, turn to a waveguide system with equal, z-dependent coupling terms and identical refractive indices.
+The effective mode coupling matrix for such a system can be written as:
+\begin{eqnarray}\label{eq:modCppl:zDep}
+\hat{\mathcal{H}}(z) =
+ \left( \begin{array}{ccc} 
+	0  & g(z) & g(z) \\
+	g(z) & 0 & g(z) \\
+	g(z) & g(z) & 0
+\end{array} \right).
+\end{eqnarray}
+The complex matrix Riccati equation, Eq.(\ref{eq:fstRiccati}), in this particular case is symmetric, suggesting that, taking initial conditions into account, the solution also is symmetric:
+\begin{eqnarray}\label{eq:symm:nuiota}	
+	\nu(z)=\iota(z), 
+\end{eqnarray}
+where we have dropped the subscript $\pm$ for the sake of simplicity as a result of  Eq.(\ref{eq:symmCon}). 
+Consequently, the complex Riccati system, Eq.(\ref{eq:fstRiccati}) trims back to a single, Ricatti differential equation:
+\begin{eqnarray}\label{eq:redRiccati}
+	\iota^{\prime}(z) = g(z)[1 - i\iota(z) +2 \iota^2(z)].
+\end{eqnarray}
+Then, the other Riccati equation we need to solve, Eq.(\ref{eq:sndRiccati}), reads,
+\begin{eqnarray}\label{eq:sndRiccati:zDep}
+	\mu^{\prime}(z) = 
+	g(z) [1+i\iota(z) + (1+i\iota(z))\mu(z)^2].
+\end{eqnarray}
+In light of the symmetries, we have two remaining functions, namely $y_0(z)$ and $\iota_0(z)$, 
+to solve until we have a closed form complete solution to obtain propagator Eq(\ref{eq:prop}). 
+It is not difficult to see that Eq.(\ref{eq:mu:min})
+to Eq.(\ref{eq:iota:min}), combined, can yield 
+functions $y_0(z)$ and $\iota_0(z)$. 
+It is important to note that care must be taken as the exponentials in Eq.(\ref{eq:mu:min}) to Eq.(\ref{eq:iota:min}) imply logarithms when solved for $y_0(z)$ and $\iota_0(z)$. 
+Thus, the  discontinuity, or branch cut, along the negative real axis of the complex logarithm insinuate the need of additional terms, 
+\begin{eqnarray}\label{eq:sndlastEq}
+	y_0(z)=\frac{-i}{2} \log\left[\frac{\iota^\prime(z) \mu^\prime(z)(1+i\mu(z))}{g(z)^2(1+i\iota(z))}\right] +2 \pi n_1(z), 
+\end{eqnarray}
+and
+\begin{eqnarray}\label{eq:lastEq}
+\iota_0(z)=\frac{-i}{2} \log\left[\frac{\iota^\prime(z)}{ \mu^\prime(z)}(1+i\mu(z))(1+i\iota(z))\right]+2 \pi n_2(z), 
+\end{eqnarray}
+to counter the logarithmic discontinuities. 
+Here the auxiliary functions $n_1(z)$ and $n_2(z)$ are z-dependent, integer functions such that logarithmic discontinuities will cancel out.
+For the sake of completeness we state the propagator function,
+given that Eq.(\ref{eq:symm:nuiota}) and Eq.(\ref{eq:symmCon}) hold true,
+\begin{eqnarray}
+\hat{\mathcal{U}}(z) &=& e^{i \iota(z) \hat{I}_{+}} e^{i \mu(z) \hat{U}_{+}}  
+e^{i \iota(z) \hat{V}_{+}} e^{ \iota_{0}(z) \hat{I}_{0}} \nonumber \\ 
+&& \times e^{i y_{0}(z) \hat{Y}}  e^{i \iota(z) \hat{V}_{-}} e^{i \mu(z) \hat{U}_{-}} e^{i \iota(z) \hat{I}_{-}}.
+\end{eqnarray}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-%%%% DRAFT
-%//////////////////////////////////////////////%//////
+Let us turn to a specific example and assume an effective linear coupling between the three waveguides, 
+\begin{eqnarray}
+g(z) = A + B z,
+\end{eqnarray}
+such that the new parameters $A$ and $B$ are real valued constants.
+This type of function implies a three-waveguide coupler where the waveguide separations are symmetrically increasing or decreasing. 
+Assuming this linear effective coupling, the Ricatti equations, Eq.(\ref{eq:redRiccati}) and  Eq.(\ref{eq:sndRiccati:zDep}), can be solved and yield the following closed forms,
+\begin{align}
+\iota(z)=& i\left[1-\frac{3 C(z)}{2 C(z) + 1}\right] \\
+\mu(z)=& i \tanh \left\{ \frac{1}{2} \left(\log 3 - \log
+\left[ 1 + 2 C(z)\right] \right) \right\}
+\end{align}
+where,
+\begin{eqnarray}
+C(z) = e^{\frac{3}{2} i z (2 A+B z)}
+\end{eqnarray}
+It is straightforward to calculate their derivatives and substitute then in the remaining simple differential equations, Eq.(\ref{eq:sndlastEq}) and Eq.(\ref{eq:lastEq}), that can be solved by direct integration,
+\begin{eqnarray}
+y_0(z)=
+-\frac{1}{2} i \log \left\{  \frac{27 ~ C(z)}{\left[ 2+ C(z)\right]^3} \right\} + \frac{1}{2}N(z)
+\end{eqnarray}
+and 
+\begin{align}
+\iota_0(z)=& -i \log \left\{ \frac{3 C(z) \left(2+C(z)\right)^2}{\left(1+2 C(z)\right)^3} \right. \times \nonumber\\
+& \times \left. \left[ 1 + \tanh \left( \frac{1}{2} \log \left[ \frac{ 1 + 2 C(z)}{3}  \right] \right) \right] \right\} - N(z)
+\end{align}
+where we have used the auxiliary function, 
+\begin{eqnarray}
+N(z)= \frac{3}{2} z (2 A+B z)-\arg\left[C(z)\right].
+\end{eqnarray}
+Note that $N(z)$ was chosen unequivocally such that $y_0(z)$ and $\iota_0(z)$ are continuous functions while equations Eq.(\ref{eq:mu:min}) to Eq.(\ref{eq:iota:min}) remain 
+unaffected. 
+Figure \ref{fig:Fig6} shows the propagation trajectories of two random initial fields impinging at a equilateral coupler where all waveguides are getting closer together producing an effective coupling parameter that depends linearly on the propagation distance, $g(z) = 1 +0.5 z$.
+Note that such an array protects the eigenstates of the initial configuration through propagation.
+
+\begin{figure}[htbp]
+	\centering
+	\fbox{\includegraphics[width=\linewidth]{Fig6.pdf}}
+	\caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert \mathcal{E}_{0}(z) \vert, \vert \mathcal{E}_{1}(z) \vert, \vert \mathcal{E}_{2}(z) \vert )$, for initial random fields impinging an equilateral triangular three-waveguide coupler that is shrinking with an effective coupling parameter $g(z) = 1 +0.5 z$.}
+	\label{fig:Fig6}
+\end{figure}
+
 
 \section{Beyond the standard approach}
 
@@ -550,13 +669,13 @@ If the phases are commensurate, the trajectories in phase space will be periodic
 \epsilon = \langle \mathcal{E}(0) \vert \hat{H}(0) \vert \mathcal{E}(0) \rangle.
 \end{eqnarray}  
 For mode-coupling matrices that do not depend on the propagation distance, if the eigenvalues are commensurable, the trajectories in phase space are well-defined and closed, otherwise they will fill a region defined by the initial energy.
-Figure \ref{fig:Fig6} shows propagation trajectories of the absolute field amplitudes for the numerical propagation of random parameter sets and initial conditions yielding incommensurate eigenvalues and, thus, ergodic trajectories.
+Figure \ref{fig:Fig7} shows propagation trajectories of the absolute field amplitudes for the numerical propagation of random parameter sets and initial conditions yielding incommensurate eigenvalues and, thus, ergodic trajectories.
 
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[width=\linewidth]{Fig6.pdf}}
+	\fbox{\includegraphics[width=\linewidth]{Fig7.pdf}}
 	\caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert \mathcal{E}_{0}(z) \vert, \vert \mathcal{E}_{1}(z) \vert, \vert \mathcal{E}_{2}(z) \vert )$, for initial random fields impinging random triangular three-waveguide couplers with constant parameters yielding ergodic trajectories.}
-	\label{fig:Fig6}
+	\label{fig:Fig7}
 \end{figure}
 
 Let us focus our attention now on the vast class of incommensurate trajectories and, for the sake of simplicity, keep using optical devices that do not change with the propagation distance.
@@ -582,7 +701,7 @@ Numerically, once a given set of initial intensities or energy is chosen, the en
 	\frac{\partial H_{B}}{\partial n_1}\delta n_1 + 
 	\frac{\partial H_{B}}{\partial n_2}\delta n_2 = 0.
 \end{eqnarray}
-Figure \ref{fig:Fig7} shows this envelope for all possible trajectories with a given energy $\epsilon$ as a solid black line.
+Figure \ref{fig:Fig8} shows this envelope for all possible trajectories with a given energy $\epsilon$ as a solid black line.
 
 Now, we can turn to calculating the envelope of a single trajectory. 
 We have already discussed how to find the propagator for any given three-waveguide coupler. 
@@ -613,15 +732,15 @@ Accordingly, the envelope can be calculated from the following differential equa
 	\frac{\partial D(z,\phi)}{\partial z} \delta z +
 	\frac{\partial D(z,\phi)}{\partial \phi} \delta \phi = 0. \label{eq:EnvInd}
 \end{eqnarray}
-Figure \ref{fig:Fig7} shows two examples of envelopes for individual trajectories with particular initial field amplitudes and the same energy $\epsilon$ as dashed blue and dotted red lines. 
+Figure \ref{fig:Fig8} shows two examples of envelopes for individual trajectories with particular initial field amplitudes and the same energy $\epsilon$ as dashed blue and dotted red lines. 
 
 \begin{figure}[htbp]
 	\centering
-	\fbox{\includegraphics[width=\linewidth]{Fig7.pdf}}
+	\fbox{\includegraphics[width=\linewidth]{Fig8.pdf}}
 	\caption{(Color online) Propagation trajectories of absolute amplitudes, $(\vert \mathcal{E}_{0}(z) \vert, \vert \mathcal{E}_{1}(z) \vert, \vert \mathcal{E}_{2}(z) \vert )$,  for two 
 		distinct trajectories pertaining to the energy $\epsilon$ (solid gray). The boundary of all possible trajectories (solid black) and the envelopes of the individual  trajectories (dashed blue and dotted red) are calculated according to equation Eq.(\ref{eq:EnvInd}).} 
 	
-	\label{fig:Fig7}
+	\label{fig:Fig8}
 \end{figure}
 
 
@@ -630,6 +749,7 @@ We have shown that it is possible to approach the propagation of electromagnetic
 We derived a formal solution \`a la Wei-Norman in line with the idea of Gilmore-Perelomov coherent states.
 In order to provide practical examples, we focused our attention on a reduced class of structures where the waveguides are identical and the effective couplings are constant, independent of the propagation distance, and christened them constant optical trimers. 
 We established a connection between the equilateral trimer, actually any circular array of waveguides with identical couplings, and the discrete Fourier transform, and between the isoceles trimer and the golden ratio where it is possible to suppress the energy transfer to one of the waveguides. 
+For the sake of providing a propagation dependent example, we studied a system where all the waveguides get symmetrically closer or further apart following a linear z-dependent effective coupling.
 Our results for passive triangular three-waveguide couplers may be useful for a theoretical approach to linear and nonlinear active devices.
 
 We went beyond the standard classical-quantum analogy in the single photon limit and showed that, using the classical limit, it is possible to recover the coupled mode differential equations describing the propagation of intensity and phase.
@@ -860,3 +980,20 @@ H.~Goldstein, \emph{Classical mechanics} (Addison-Wesley, U.S.A., 1980).
 
 
 \end{document}
+
+
+
+\begin{eqnarray}
+\iota_{+}^{\prime} &=&  g_{01} \iota_{+}^{2} +  \left( g_{02} \nu_{+} + i \omega_{i} \right) \iota_{+}  - i g_{12} \nu_{+} + g_{01}    ,    \label{eq:iota} \\
+\mu_{+}^{\prime} &=& \left(g_{12} + i g_{02} \iota_{+} \right)\mu_{+}^{2} + \left[ g_{02} \nu_{+} - g_{01} \iota_{+} + \frac{i}{2} \left(2\omega_{y} - \omega_{i} \right)\right] \mu_{+} \nonumber \\ && + i g_{01} \nu_{+} + g_{12}, \\
+\nu_{+}^{\prime} &=& g_{02} \nu_{+}^{2} +  \left[ g_{01} \iota_{+} + \frac{i}{2} \left( 2 \omega_{y} + \omega_{i}  \right) \right] \nu_{+}  - i g_{12} \iota_{+} + g_{02}  , \label{eq:mu} \\
+\iota_{0}^{\prime} &=& \omega_{i} - i 2  g_{01} \iota_{+} + i g_{12} \mu_{+} - g_{02} \left( \iota_{+} \mu_{+} + i \nu_{+} \right) , \\
+y_{0}^{\prime} &=& \omega_{y} - i\frac{3}{2}  
+[ g_{02}   \nu_{+} +    
+( g_{12} + i  g_{02} \iota_{+})\mu_{+}],  \\
+\nu_{-}^{\prime} &=& g_{02} e^{i  \left( y_0 + \frac{1}{2} \iota_0 \right)}
+-  e^{i\iota_{0}}   \left( g_{02} \mu_{+} + i  g_{01} \right) \mu_{-} ,  \\
+\mu_{-}^{\prime} &=&  e^{i  \left( y_0 - \frac{1}{2} \iota_0 \right)}
+( g_{12} + i g_{02} \iota_{+}),\\
+\iota_{-}^{\prime} &=& e^{i \iota_{0}} \left( g_{01} - i g_{02}\mu_{+} \right), 
+\end{eqnarray}
